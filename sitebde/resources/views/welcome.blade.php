@@ -27,6 +27,7 @@
                         <li> Mentions légales </li>
                     </ul>
                 </div>
+                <div class="whiteBar"></div>
                 <div id="event" class="colonne">
                     <h3> ÉVÈNEMENTIEL </h3>
                     <ul>
@@ -44,13 +45,14 @@
                         <li>Panier</li>
                     </ul>
                 </div>
-                <div id="network" >
-                    <h3>NETWORK<h3>
+                <div class="whiteBar"></div>
+                <div id="network" class="flex-container" >
+                    <!-- <h3>NETWORK<h3> -->
                     <a href = "https://www.facebook.com/bdecesibdx/">
-                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-facebook fa-3x"></i>
                     </a>
                     <a href = "https://www.instagram.com/bde_cesi_bdx/">
-                        <i class="fab fa-instagram" ></i>
+                        <i class="fab fa-instagram fa-3x" ></i>
                     </a>
                     <a href = "https://www.cesi.fr">
                     <img src="/ImageTemplate/CESIAlumni.png" alt="logo cesi" id="logoCesi"> </div>
