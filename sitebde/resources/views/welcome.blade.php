@@ -11,10 +11,9 @@
 
     <body>
         <div id ="bandeau">
-        <div> 
             <img src="/ImageTemplate/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
             <br>
-            <!-- <div id="carre"> </a></div> -->
+            <div id="carre"> </a></div>
         </div>
 
         <div id="footer">
