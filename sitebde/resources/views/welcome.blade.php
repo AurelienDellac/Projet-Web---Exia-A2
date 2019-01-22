@@ -8,11 +8,39 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <link rel="stylesheet" type="text/css" href="css/default.css">
+        <link rel="stylesheet" type="text/css" href="css/navbar.css" media="all"/>
         <title>Laravel</title>  
 
     </head>
 
     <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="ImageTemplate/logoInvert.png" alt="LOGO" title="logo" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Evenements
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Evenements futurs</a>
+                <a class="dropdown-item" href="#">Evenements passés</a>
+                <a class="dropdown-item" href="#">Boite à idée</a>
+                </div>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Boutique</a>
+                </li>
+                </ul>
+            
+                
+                <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
+                <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
+        </div>
+    </nav>
         <div id ="bandeau">
             <img src="/ImageTemplate/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
             <div id="carre"> </div>
