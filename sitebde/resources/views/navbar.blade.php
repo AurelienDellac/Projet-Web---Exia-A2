@@ -30,15 +30,15 @@
         </li>
         </ul>
     
-        <a class="nav-link mr-2" href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
-        <a class="nav-link mr-2" href='#'>Connexion</a>
+        
+        <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier3.png" alt="Panier" title="Panier" /></a>
+        <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
 
     
 
    
   </div>
 </nav>
-
 
 
 
