@@ -1,19 +1,13 @@
 body{
     background-image: linear-gradient(#5D89DA,#FFC252) ;
-    background-blend-mode: darken;
     margin: 0px;
-    height: 1000px;
+    height: 800px;
 }
 
 #bandeau{
     position: relative;
     width:100%; 
     height:205px;  
-    background-image: linear-gradient(rgb(90,90,90), rgb(90,90,90)),url("/ImageTemplate/CesiBordeaux.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    background-blend-mode: multiply;
     
 }
 
@@ -41,3 +35,16 @@ img{
     width: 100%;
     height: 205px;
 }
+
+#footer {
+    color: #fff;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:250px;   /* Height of the footer */
+    background:#000;
+ }
+
+ .colonne{
+     columns: 4 600px;  
+ }
