@@ -1,0 +1,21 @@
+img {
+	width: 75px;
+	height: 75px;
+}
+.navbar {
+    background-color: black !important;
+    background-image: none;
+    background-repeat: no-repeat;
+    color: white!important;
+}
+.navbar > div > ul > li > a{
+    color: white !important;
+}
+.navbar > div > a {
+    color:white;
+   }
+.navbar > div > a > img{
+    width: 36px;
+    height: 36px;
+    color: white;
+}
