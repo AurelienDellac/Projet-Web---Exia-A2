@@ -45,7 +45,6 @@
             <img src="/ImageTemplate/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
             <div id="carre"> </div>
         </div>
-
         <div id="footer" class="flex-container">
                 <div id="contact" class="colonne">
                     <h3> CONTACT / INFORMATION </h3>
