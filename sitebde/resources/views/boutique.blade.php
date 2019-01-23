@@ -16,10 +16,10 @@
 <aside>
 <form>
   <p>Catégorie :</p>
-  <div>
+  <div id='blabla'>
     <input type="radio" id="catégorieChoix1"
      name="catégorie" value="catégorieChoix1">
-    <label for="catégorieChoix1">Vetement</label><br>
+    <label for="catégorieChoix1">Vetements</label><br>
 
     <input type="radio" id="catégorieChoix2"
      name="catégorie" value="catégorieChoix2">
@@ -35,27 +35,41 @@
 </form>
 </aside>
 
-<div class='displayprod'>
-	<img src="images/produits/pull.png", class='prodpic' />
-		<div class='price'> 20€ </div>
-		<div class='description'> 
-			<strong>Pull</strong></br>
-			Ce pull est idéal pour la team JUL.
-		</div>
-	</div>  
+<div class="card-deck">
 
+<a class="card link" href='produit1'>
+    <img class="card-img-top" src="images/produits/pull.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-description">Ce magnifique pull personnalisable permet aux membre de la team JUL de se reconnaitre.</p>
+      <p class="card-text">Prix : 50€</p>
+    </div>
+</a>
 
+  <a class="card link" href='produit2'>
+    <img class="card-img-top" src="images/template/logoInvert.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pull personnalisable</h5>
+      <p class="card-text">Ce magnifique pull personnalisable permet aux membre de la team JUL de se reconnaitre.</p>
+      <p class="card-text">Prix : 50€</p>
+    </div>
+</a>
+ 
+  <a class="card link" href='produit3'>
+    <img class="card-img-top" src="images/produits/pull.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Pull personnalisable</h5>
+      <p class="card-text">Ce magnifique pull personnalisable permet aux membre de la team JUL de se reconnaitre.</p>
+      <p class="card-text">Prix : 50€</p>
+    </div>
+</a>
+</div>
 
-<div class='displayprod'>
-	<img src="images/template/logoInvert.png", class='prodpic' />
-		<div class='price'> 20€ </div>
-		<div class='description'> 
-			<strong>Rouge</strong></br>
-			Ce pull est idéal pour la team JUL.
-		</div>
-	</div>
-  
   @stop
+
+
+  <script src="js/jquery.min.js" ></script>
+  <script src="js/boutique.js"> </script>
 
 </body>
 </html>
