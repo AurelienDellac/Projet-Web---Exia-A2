@@ -10,7 +10,7 @@
 <body>
     
 
-@extends('welcome')
+@extends('layout')
 
 @section('content')
 <aside>
@@ -36,14 +36,13 @@
 </aside>
 
 <div class='displayprod'>
-	<img src="images/template/logoInvert.png", class='prodpic' />
+	<img src="images/produits/pull.png", class='prodpic' />
 		<div class='price'> 20€ </div>
 		<div class='description'> 
 			<strong>Pull</strong></br>
 			Ce pull est idéal pour la team JUL.
 		</div>
 	</div>  
-
 
 
 
