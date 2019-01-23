@@ -71,7 +71,7 @@
                     </ul>
                 </div>
                 <div id="boutique" class="colonne">
-                <a href="/boutique" class="button nav-link"><h3>BOUTIQUE</h3> </a>
+                <h3><a href="/boutique" class="button nav-link">BOUTIQUE </a></h3>
                     <ul>
                         <a href="" class="button nav-link">Vêtements </a>
                         <a href="" class="button nav-link">Accessoires</a>
