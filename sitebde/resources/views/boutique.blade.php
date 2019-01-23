@@ -9,10 +9,10 @@
 </head>
 <body>
     
-@include('navbar')
 
+@extends('welcome')
 
-
+@section('content')
 <aside>
 <form>
   <p>Catégorie :</p>
@@ -36,7 +36,7 @@
 </aside>
 
 <div class='displayprod'>
-	<img src="ImageTemplate/logoInvert.png", class='prodpic' />
+	<img src="images/template/logoInvert.png", class='prodpic' />
 		<div class='price'> 20€ </div>
 		<div class='description'> 
 			<strong>Pull</strong></br>
@@ -48,14 +48,15 @@
 
 
 <div class='displayprod'>
-	<img src="ImageTemplate/logoInvert.png", class='prodpic' />
+	<img src="images/template/logoInvert.png", class='prodpic' />
 		<div class='price'> 20€ </div>
 		<div class='description'> 
 			<strong>Rouge</strong></br>
 			Ce pull est idéal pour la team JUL.
 		</div>
 	</div>
+  
+  @stop
 
-</section>  
 </body>
 </html>
