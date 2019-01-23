@@ -52,7 +52,7 @@
             @yield('content');
 
         </div>
-
+        
         <div id="footer" class="flex-container">
                 <div id="contact" class="colonne">
                     <h3> CONTACT / INFORMATION </h3>
