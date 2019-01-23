@@ -9,13 +9,13 @@
 
         <link rel="stylesheet" type="text/css" href="css/navbar.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-        <title>BDE Cesi</title>  
+        <title>BDE Cesi Bordeaux</title>  
 
     </head>
 
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
+        <a class="navbar-brand" href="#"><img class="icon" src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,12 +32,12 @@
                 </div>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" class="button">Boutique</a>
+                <a href="#" class="button nav-link">Boutique</a>
                 </li>
                 </ul>
                 
-                <a class="nav-link " href='#'><img src="images/template/iconePanier.png" alt="Panier" title="Panier" /></a>
-                <a class="nav-link " href='#'><img src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
+                <a class="nav-link" href='#'><img class="icon" src="images/template/iconePanier.png" alt="Panier" title="Panier" /></a>
+                <a class="nav-link" href='#'><img class="icon" src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
 
         </div>
     </nav>
@@ -49,27 +49,27 @@
                 <div id="contact" class="colonne">
                     <h3> CONTACT / INFORMATION </h3>
                     <ul>
-                        <li> communication@bdecesibordeaux.fr </li>
-                        <li> CGU </li>
-                        <li> Mentions légales </li>
+                        <a href="mailto:communication@bdecesibordeaux.fr" class="button nav-link"> communication@bdecesibordeaux.fr </a>
+                        <a href="" class="button nav-link"> CGU </a>
+                        <a href="" class="button nav-link"> Mentions légales </a>
                     </ul>
                 </div>
                 <div class="whiteBar"></div>
                 <div id="event" class="colonne">
                     <h3> ÉVÈNEMENTIEL </h3>
                     <ul>
-                        <li>Programme</li>
-                        <li>Évènements passés</li>
-                        <li>Boîte a idée</li>
+                        <a href="" class="button nav-link">Programme</a>
+                        <a href="" class="button nav-link">Évènements passés</a>
+                        <a href="" class="button nav-link">Boîte a idée</a>
                     </ul>
                 </div>
                 <div id="boutique" class="colonne">
                     <h3>BOUTIQUE</h3>
                     <ul>
-                        <li class="button">Vêtements</li>
-                        <li class="button">Accessoires</li>
-                        <li class="button">Billeterie</li>
-                        <li class="button">Panier</li>
+                        <a href="" class="button nav-link">Vêtements </a>
+                        <a href="" class="button nav-link">Accessoires</a>
+                        <a href="" class="button nav-link">Billeterie</a>
+                        <a href="" class="button nav-link">Panier</a>
                     </ul>
                 </div>
                 <div class="whiteBar"></div>
@@ -81,7 +81,7 @@
                         <i class="fab fa-instagram fa-3x" ></i>
                     </a>
                     <a href = "https://www.cesi.fr">
-                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi"> </div>
+                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi" class="icon"> </div>
                     </a>
                 </div>
         </div>
