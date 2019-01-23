@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-        <link rel="stylesheet" type="text/css" href="css/default.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css" media="all"/>
-        <title>Laravel</title>  
+        <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
+        <title>BDE Cesi</title>  
 
     </head>
 
@@ -22,23 +22,23 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle button" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Evenements
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Evenements futurs</a>
-                <a class="dropdown-item" href="#">Evenements passés</a>
+                <a class="dropdown-item " href="#">Evenements futurs</a>
+                <a class="dropdown-item " href="#">Evenements passés</a>
                 <a class="dropdown-item" href="#">Boite à idée</a>
                 </div>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Boutique</a>
+                <a class="nav-link" href="#" class="button">Boutique</a>
                 </li>
                 </ul>
             
                 
-                <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
-                <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
+                <a class="nav-link button" href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
+                <a class="nav-link button" href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
         </div>
     </nav>
         <div id ="bandeau">
@@ -67,15 +67,14 @@
                 <div id="boutique" class="colonne">
                     <h3>BOUTIQUE</h3>
                     <ul>
-                        <li>Vêtements</li>
-                        <li>Accessoires</li>
-                        <li>Billeterie</li>
-                        <li>Panier</li>
+                        <li class="button">Vêtements</li>
+                        <li class="button">Accessoires</li>
+                        <li class="button">Billeterie</li>
+                        <li class="button">Panier</li>
                     </ul>
                 </div>
                 <div class="whiteBar"></div>
                 <div id="network" class="flex-container" >
-                    <!-- <h3>NETWORK<h3> -->
                     <a href = "https://www.facebook.com/bdecesibdx/">
                         <i class="fab fa-facebook fa-3x"></i>
                     </a>
