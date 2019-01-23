@@ -92,7 +92,7 @@ li{
 }
 .myLink:hover
 {
-    color: rgb(59, 89, 152) !important;
+    color: rgb(125, 89, 152) !important;
     text-decoration: none;
 }
 .myLink:active
