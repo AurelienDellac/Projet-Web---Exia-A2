@@ -22,18 +22,6 @@ body{
     height: 205px;
 }
 
-#carre{
-    position: absolute;
-    
-    width:100%; 
-    height:205px;  
-    color:black;
-    background-color: rgba(0,0,0, 0.6);
-    z-index:2;
-    top: 100px;
-    
-}
-
 #footer {
     color: #fff;
     position:bottom;
@@ -92,22 +80,22 @@ li{
     background-color: rgb(59, 89, 152) !important;
 }
 
-a.nav-link:link
+.myLink:link
+{
+    color: rgb(220, 220, 220)  !important;
+    text-decoration: none  !important;
+}
+.myLink:visited
 {
     color: rgb(220, 220, 220);
     text-decoration: none;
 }
-a.nav-link:visited
-{
-    color: rgb(220, 220, 220);
-    text-decoration: none;
-}
-a.nav-link:hover
+.myLink:hover
 {
     color: rgb(125, 89, 152) !important;
     text-decoration: none;
 }
-a.nav-link:active
+.myLink:active
 {
     color: rgb(220, 220, 220);
     text-decoration: none;
