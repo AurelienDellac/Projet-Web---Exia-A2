@@ -6,6 +6,8 @@
 
 @section('content')
 
+<script src="allEvents.js"></script>
+
 <a href="/escalade " class="card flex-container" style="width: 18rem;">
   <img src="images/events/tmp.jpg" class="card-img-top" alt="image escalade">
   <div class="card-body">
@@ -15,3 +17,4 @@
 </a>
 
 @endsection
+

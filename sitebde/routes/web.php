@@ -17,3 +17,11 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
+
+Route::get('evenements', function(){
+    
+$events = DB::table('events')->get();
+
+return view('evenements', ['events' => $events]);
+
+});
