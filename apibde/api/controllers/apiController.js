@@ -3,31 +3,41 @@
 var Event = require("../models/Event");
 
 exports.list_all_events = function(req, res) {
-  Event.getAllEvent(function(err, event) {
+  Event.getAllEvent(function(err, data) {
     if (err) {
       res.send(err);
     } else {
-      res.json(event);
+      res.json(data);
     }
   });
 };
 
 exports.read_an_event = function(req, res) {
-  Event.getEventById(req.params.id, function(err, event) {
+  Event.getEventById(req.params.id, function(err, data) {
     if (err) {
       res.send(err);
     } else {
-      res.json(event);
+      res.json(data);
     }
   });
 };
 
-exports.list_all_comments = function(req, res) {
-  Event.getCommentsByEvent(req.params.id, function(err, event) {
+exports.list_all_medias = function(req, res) {
+  Event.getMediasByEvent(req.params.id, function(err, data) {
     if (err) {
       res.send(err);
     } else {
-      res.json(event);
+      res.json(data);
+    }
+  });
+};
+
+exports.list_all_ideas = function(req, res) {
+  Event.getIdeas(function(err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(data);
     }
   });
 };
