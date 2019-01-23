@@ -35,9 +35,7 @@
         <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
         <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
 
-    @show
-
-    @yield('content')
+    
 
    
   </div>
