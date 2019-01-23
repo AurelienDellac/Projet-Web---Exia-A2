@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route:: get('/navbar', function(){
-    return view('navbar');
-});
-
-Route:: get('/boutique', function(){
-    return view('boutique');
-});
-
+Route::view('/boutique', 'boutique');
+Route::view('/', 'welcome');
+Route::view('/CGU', 'CGU');
+Route::view('/evenement', 'evenement');
+Route::view('/mentionlegales', 'mentionlegales');
+Route::view('/panier', 'panier');
