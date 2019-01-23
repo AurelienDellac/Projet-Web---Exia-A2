@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  
+  <title>BDE CESI</title>
     <link rel="stylesheet" type="text/css" href="css/navbar.css" media="all"/>
 </head>
 <body>
-    
+    @section('navbar')
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src="ImageTemplate/logoInvert.png" alt="LOGO" title="logo" /></a>
+  <a class="navbar-brand" href="navbar"><img src="ImageTemplate/logoInvert.png" alt="LOGO" title="logo" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,15 +27,17 @@
         </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Boutique</a>
+        <a class="nav-link" href="boutique">Boutique</a>
         </li>
         </ul>
     
         
-        <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier3.png" alt="Panier" title="Panier" /></a>
+        <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
         <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
 
-    
+    @show
+
+    @yield('content')
 
    
   </div>

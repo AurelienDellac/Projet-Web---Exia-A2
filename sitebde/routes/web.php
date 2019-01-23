@@ -17,3 +17,8 @@ Route::get('/', function () {
 Route:: get('/navbar', function(){
     return view('navbar');
 });
+
+Route:: get('/boutique', function(){
+    return view('boutique');
+});
+

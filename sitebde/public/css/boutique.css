@@ -1,0 +1,56 @@
+
+.displayprod {
+	display : inline-block;
+	height : 280px;
+	background-color : white;
+	border:5px solid white;
+	margin: 5px;
+}
+
+.prodpic {
+    height: 150px;
+    width:  200px;
+}
+
+.price {
+	height : 30px;
+	width : 60px;
+	background-color : rgb(59, 89, 152) ;
+	color : white;
+	float: top;
+	position: relative ;
+	top : -21px;
+	left : 5px;
+	margin : 0px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 30px;
+}
+
+.description {
+	width : 200px;
+	margin-left : 10px;
+}
+
+
+aside{
+  float: left;
+  margin: -4px;
+}
+
+form{
+  background-color: white;
+  padding: 5px;
+  border:10px solid rgb(59, 89, 152);
+  font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+form > p{
+  font-size: 30px;
+}
+button{
+  background-color: rgb(59, 89, 152);
+  color: white;
+}
