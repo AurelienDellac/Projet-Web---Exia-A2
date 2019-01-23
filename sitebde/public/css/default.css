@@ -80,22 +80,22 @@ li{
     background-color: rgb(59, 89, 152) !important;
 }
 
-a.nav-link:link
+.myLink:link
+{
+    color: rgb(220, 220, 220)  !important;
+    text-decoration: none  !important;
+}
+.myLink:visited
 {
     color: rgb(220, 220, 220);
     text-decoration: none;
 }
-a.nav-link:visited
-{
-    color: rgb(220, 220, 220);
-    text-decoration: none;
-}
-a.nav-link:hover
+.myLink:hover
 {
     color: rgb(59, 89, 152) !important;
     text-decoration: none;
 }
-a.nav-link:active
+.myLink:active
 {
     color: rgb(220, 220, 220);
     text-decoration: none;
