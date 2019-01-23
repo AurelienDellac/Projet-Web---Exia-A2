@@ -85,3 +85,8 @@ li{
     height: 200px;
     align-self: center;
 }
+
+.button:hover{
+    color: rgb(59, 89, 152) !important;
+    background-color: rgb(59, 89, 152) !important;
+}
