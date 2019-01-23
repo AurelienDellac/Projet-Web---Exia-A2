@@ -15,7 +15,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img class="icon" src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
+            <a class="navbar-brand" href="/"><img class="icon" src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,7 +32,7 @@
                     </div>
                     </li>
                     <li class="nav-item">
-                    <a href="#" class="button nav-link">Boutique</a>
+                    <a href="/boutique" class="button nav-link">Boutique</a>
                     </li>
                     </ul>
                     
@@ -44,7 +44,6 @@
 
         <div id ="bandeau">
             <img src="/images/template/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
-            <div id="carre"> </div>
         </div>
 
         <div>
@@ -72,7 +71,7 @@
                     </ul>
                 </div>
                 <div id="boutique" class="colonne">
-                    <h3>BOUTIQUE</h3>
+                <a href="/boutique" class="button nav-link"><h3>BOUTIQUE</h3> </a>
                     <ul>
                         <a href="" class="button nav-link">Vêtements </a>
                         <a href="" class="button nav-link">Accessoires</a>
