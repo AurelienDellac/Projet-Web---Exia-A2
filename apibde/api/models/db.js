@@ -7,7 +7,8 @@ var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'projet',
     password : 'Creeper07',
-    database : 'sitebde'
+    database : 'sitebde',
+    timezone : 'utc'
 });
 
 connection.connect(function(err) {
