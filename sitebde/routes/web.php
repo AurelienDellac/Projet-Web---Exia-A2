@@ -14,6 +14,6 @@
 Route::view('/boutique', 'boutique');
 Route::view('/', 'welcome');
 Route::view('/CGU', 'CGU');
-Route::view('/evenement', 'evenement');
-Route::view('/mentionlegales', 'mentionlegales');
+Route::view('/evenements', 'evenements');
+Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
