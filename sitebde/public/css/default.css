@@ -37,7 +37,7 @@ body{
 
 #footer {
     color: #fff;
-    position:absolute;
+    position: bottom;
     bottom:0;
     width:100%;
     height:250px;   /* Height of the footer */
@@ -69,14 +69,17 @@ li{
     color: rgb(59, 89, 152);
 }
 
-#logoCesi{
+.icon{
     background-color: white;
-    height: 50px;
-    width: 50px;
 }
 
-#logoCesi:hover{
-    background-color: rgb(59, 89, 152);
+.icon:hover{
+    background-color: rgb(59, 89, 152) !important;
+}
+
+#logoCesi{
+    height: 50px;
+    width: 50px;
 }
 
 .whiteBar{
@@ -86,7 +89,27 @@ li{
     align-self: center;
 }
 
-.button:hover{
-    color: rgb(59, 89, 152) !important;
+.button img:hover{
     background-color: rgb(59, 89, 152) !important;
+}
+
+a.nav-link:link
+{
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+a.nav-link:visited
+{
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+a.nav-link:hover
+{
+    color: rgb(59, 89, 152) !important;
+    text-decoration: none;
+}
+a.nav-link:active
+{
+    color: rgb(220, 220, 220);
+    text-decoration: none;
 }
