@@ -15,7 +15,7 @@
 
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="ImageTemplate/logoInvert.png" alt="LOGO" title="logo" /></a>
+        <a class="navbar-brand" href="#"><img src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,12 +37,12 @@
                 </ul>
             
                 
-                <a class="nav-link " href='#'><img src="ImageTemplate/iconePanier.png" alt="Panier" title="Panier" /></a>
-                <a class="nav-link " href='#'><img src="ImageTemplate/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
+                <a class="nav-link " href='#'><img src="images/template/iconePanier.png" alt="Panier" title="Panier" /></a>
+                <a class="nav-link " href='#'><img src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>   
         </div>
     </nav>
         <div id ="bandeau">
-            <img src="/ImageTemplate/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
+            <img src="/images/template/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau"> </div>
             <div id="carre"> </div>
         </div>
         <div id="footer" class="flex-container">
@@ -82,7 +82,7 @@
                         <i class="fab fa-instagram fa-3x" ></i>
                     </a>
                     <a href = "https://www.cesi.fr">
-                    <img src="/ImageTemplate/CESIAlumni.png" alt="logo cesi" id="logoCesi"> </div>
+                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi"> </div>
                     </a>
                 </div>
         </div>
