@@ -1,11 +1,8 @@
-
     <link rel="stylesheet" type="text/css" href="css/boutique.css" media="all"/>
 
     <title>Boutique</title>
 
-
-@extends('layout')
-
+@extends('layout') 
 @section('content')
 <aside>
 <form id='formCategory'>
@@ -29,18 +26,13 @@
 </form>
 </aside>
 
-
-
-
 <div class="card-deck" id="products">
 
-
 </div>
-
-  @stop
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="js/boutique.js"> </script> 
 
+@stop
 

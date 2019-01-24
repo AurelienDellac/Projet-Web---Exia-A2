@@ -18,9 +18,12 @@ Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
 
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::get('boutique', function () {
 
     $products = DB::table('products')->get();
 
     return view('boutique', ['products' => $products]);
 });
+
