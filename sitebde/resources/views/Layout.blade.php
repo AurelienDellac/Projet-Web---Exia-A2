@@ -46,7 +46,7 @@
             </ul>
 
             <a class="nav-link myLink" href='#'><img class="icon" src="images/template/iconePanier.png" alt="Panier" title="Panier" /></a>
-            <a class="nav-link myLink" href='#'><img class="icon" src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
+            <a class="nav-link myLink" href='/register'><img class="icon" src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
 
         </div>
     </nav>
@@ -57,10 +57,9 @@
             @yield("title")
         </div>
     </div>
-
     <div>
 
-        @yield('content');
+        @yield('content')
 
     </div>
 
