@@ -29,7 +29,7 @@ module.exports = function(app) {
   app.route('/products/:id')
     .get(api.read_a_product);
 
-  app.route('/products/:category')
+  app.route('/products/category/:category')
     .get(api.list_products_by_category);
   
   app.route('/basket/:id')
