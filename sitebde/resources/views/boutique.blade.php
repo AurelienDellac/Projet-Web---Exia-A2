@@ -38,7 +38,7 @@
 
 
 <div class="card-deck">
-@foreach($products as $key => $data)
+@foreach($products as $product => $data)
     
 <a class="card link" href='produit1'>
     <img class="card-img-top" src='images/produits/{{$data->img_src}}' alt="Card image cap">
