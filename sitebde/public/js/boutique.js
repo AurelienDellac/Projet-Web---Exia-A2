@@ -1,19 +1,16 @@
-$(function (){
-    
-    getProducts("");
-    $("#formCategory")[0].reset();
-    $('#sort').click(function() {
-        getProducts("category/" + $('input[name=cat]:checked').val());
-        
-    });
-});
 
-function getProducts($cat) {
+$(function (){
     var $products = $('#products');
-    $products.empty();
+    var formCategory = document.getElementsByName('categorie');
+    var form_value;
+    for(var i = 0; i < formCategory.length; i++){
+    if(formCategory[i].checked){
+        form_value = formCategory[i].value;
+    }
+}
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/products/" + $cat,
+        url: "http://10.133.129.169:3000/products/" + form_value,
         success: function(products) {
             $.each(products, function(i, product){
                 $products.append("<a class='card link' href='produit/" + 
@@ -28,4 +25,8 @@ function getProducts($cat) {
                 }
                        
     });
+});
+
+$function form(){
+
 }
