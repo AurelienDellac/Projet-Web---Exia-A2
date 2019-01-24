@@ -1,0 +1,35 @@
+.card-header {
+    background-color: rgb(59, 89, 152)!important;
+    border-radius: 0px!important;
+    color : #fff!important;
+}
+
+.card {
+    margin: 10px;
+    border-color: rgb(59, 89, 152)!important;
+    border-width: 2px!important;
+    border-radius: 5px!important;
+    background-color: rgba(255,255,255,0)!important;
+}
+
+.card-body {
+    background-color: rgba(255,255,255,0.1)!important;
+    font-weight: bold;
+}
+
+.card button {
+    background-color: rgb(59, 89, 152);
+    border-color: rgb(59, 89, 152);
+    color : #fff;
+}
+
+.card button:hover {
+    background-color: #fff;
+    border-color: rgb(59, 89, 152);
+    color : rgb(59, 89, 152);
+}
+
+.card .form-control:focus { 
+    border-color: rgb(59, 89, 152);
+    box-shadow: 0 0 8px rgb(59, 89, 152);
+}
