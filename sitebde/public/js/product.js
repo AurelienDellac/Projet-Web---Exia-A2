@@ -18,8 +18,7 @@ function getProducts($cat) {
             $.each(products, function(i, product){
                 $products.append("<a class='card link' href='produit/" + 
                 product.id + 
-                " '> <img class='card-img-top' src=" + 'images/produits/' + product.img_src +
-                  " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
+                " '> <div class='card-body'>  <h5 class='card-title'>" + product.label +
                    "</h5> <p class='card-description'>" + product.description +
                     "</p><p class='card-text'>" + product.price + 
                     "</p> </div> </a>");
