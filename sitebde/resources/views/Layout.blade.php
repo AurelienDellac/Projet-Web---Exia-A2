@@ -60,7 +60,7 @@
 
     <div>
 
-        @yield('content');
+        @yield('content')
 
     </div>
 

@@ -17,6 +17,7 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
+Route::view('/product', 'product');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
