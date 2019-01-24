@@ -13,7 +13,7 @@ function getProducts($cat) {
     $products.empty();
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/products/" + $cat,
+        url: "http://localhost:3000/products/" + $cat,
         success: function(products) {
             $.each(products, function(i, product){
                 $products.append("<a class='card link' href='produit/" + 

@@ -77,7 +77,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function showRegistrationForm() {
+    static public function showRegistrationForm() {
         return view("auth/register", ["centers" => CenterController::index()]);
     }
 }
