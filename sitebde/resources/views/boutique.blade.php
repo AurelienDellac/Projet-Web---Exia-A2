@@ -1,10 +1,7 @@
-
     <link rel="stylesheet" type="text/css" href="css/boutique.css" media="all"/>
     <title>Boutique</title>
 
-
-@extends('layout')
-
+@extends('layout') 
 @section('content')
 <div class="shopContainer">
   <aside>
@@ -18,14 +15,6 @@
       <label for="catégorieChoix2">Accessoires</label> <br>
 
       <input type="radio"  name="cat"  value="3">
-      <label for="catégorieChoix3">Billets</label> <br>	
-    </div>
-    <div>
-      <button id="sort" class ='button' type="button">Filtrer</button>
-    </div>
-  </form>
-  </aside>
-  <div class="productPanel" id="products"></div>
 </div>
 @stop
 
@@ -33,4 +22,5 @@
 
   <script type="text/javascript" src="js/boutique.js"> </script> 
 
+@stop
 
