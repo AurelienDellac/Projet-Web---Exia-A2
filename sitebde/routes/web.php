@@ -17,6 +17,7 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
+Route::view('/product', 'product');
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
