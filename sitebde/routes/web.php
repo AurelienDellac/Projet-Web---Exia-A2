@@ -18,11 +18,7 @@ Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('/coordinate/id', 'CenterController@index');
-
 Route::get('boutique', function () {
 
     $products = DB::table('products')->get();
