@@ -32,6 +32,34 @@
     </form>
   </aside>
 
+
+
+<div class="card-deck">
+@foreach($products as $product => $data)
+    
+<a class="card link" href='produit1'>
+    <img class="card-img-top" src='images/produits/{{$data->img_src}}' alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{$data->label}}</h5>
+      <p class="card-description">{{$data->description}}</p>
+      <p class="card-text">Prix : {{$data->price}}€</p>
+    </div>
+</a>
+ 
+    
+@endforeach
+
+</div>  
+
+
+
+
+
+
+<!-- 
+
+<div class="card-deck">
+
   <div class="card-deck">
 
     <a class="card link" href='produit1'>
@@ -60,17 +88,14 @@
       <p class="card-text">Prix : 50€</p>
     </div>
 </a>
-  </div>
+
+</div>  -->
 
 
   
 @stop
 
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/boutique.js">
-
-  </script>
+  <!-- <script src="js/boutique.js"> </script> -->
 
 </body>
 
