@@ -1,26 +1,32 @@
-$(function () {
-    baseUrl = 'http://10.133.129.169:3000/products';
 
-
-$('#blabla button').click(function(e){
-    e.preventDefault();
-var params = {
-    url: baseUrl,
-    method: 'GET'
-};
-
-
-$.ajax(params).done(function (response) {
-    console.log(response);
-
-    $('.card-title').text(response[0].label);
-    $('.card-description').text(response[0].decription);
-    
-    var image = response.weather[0].img_src;
-    $('.card-img-top').attr('/images/produits/' + image);
-})
-.fail(function () {
-    console.log('err');
+$(function (){
+    var $products = $('#products');
+    var formCategory = document.getElementsByName('categorie');
+    var form_value;
+    for(var i = 0; i < formCategory.length; i++){
+    if(formCategory[i].checked){
+        form_value = formCategory[i].value;
+    }
+}
+    $.ajax({
+        type:'GET',
+        url: "http://10.133.129.169:3000/products/" + form_value,
+        success: function(products) {
+            $.each(products, function(i, product){
+                $products.append("<a class='card link' href='produit/" + 
+                product.id + 
+                " '> <img class='card-img-top' src=" + 'images/produits/' + product.img_src +
+                  " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
+                   "</h5> <p class='card-description'>" + product.description +
+                    "</p><p class='card-text'>" + product.price + 
+                    "</p> </div> </a>");
+                   
+            });
+                }
+                       
+    });
 });
-});
-});
+
+$function form(){
+
+}

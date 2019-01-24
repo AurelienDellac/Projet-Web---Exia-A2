@@ -17,6 +17,7 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
+
 Route::get('boutique', function () {
 
     $products = DB::table('products')->get();
