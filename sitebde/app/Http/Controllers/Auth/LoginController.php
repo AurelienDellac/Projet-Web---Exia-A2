@@ -6,7 +6,6 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\Http\Controllers\Auth\RegisterController;
 
 class LoginController extends Controller
 {
@@ -43,9 +42,5 @@ class LoginController extends Controller
     public function logout(Request $request) {
         Auth::logout();
         return redirect('/register');
-    }
-
-    public function showLoginForm() {
-        return RegisterController::showRegistrationForm();
     }
 }

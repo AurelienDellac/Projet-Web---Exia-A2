@@ -1,0 +1,18 @@
+aside{
+    float: left;
+      margin: 10px;
+      width : 250px;
+  }
+  
+  
+
+  
+  @media screen and (max-width: 600px) {
+
+  
+      aside {
+          width:90%;
+          align-self: center;
+      }
+  }
+  
