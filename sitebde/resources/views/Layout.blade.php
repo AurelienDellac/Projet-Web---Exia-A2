@@ -30,9 +30,9 @@
                         Evenements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item myLink" href="#">Evenements futurs</a>
-                            <a class="dropdown-item myLink" href="#">Evenements passés</a>
-                            <a class="dropdown-item myLink" href="#">Boite à idée</a>
+                            <a class="dropdown-item myLink" href="evenementsPassees">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="evenementsFutur">Evenements passés</a>
+                            <a class="dropdown-item myLink" href="boiteIdee">Boite à idée</a>
                         </div>
                     </li>
                     <li class="nav-item">
