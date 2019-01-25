@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+    <div id="page">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar" >
 
             <a class="navbar-brand" href="/">{{ HTML::image('images/template/logoInvert.png', 'LOGO', array('class' => 'icon', 'title' => 'LOGO CESI')) }}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
@@ -48,25 +48,26 @@
             </div>
         </nav>
 
-        <div id="bandeau">
+        <div id="bandeau" >
             <img src="/images/template/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau">
             <div class="title">
                 @yield("title")
             </div>
         </div>
 
-        <div>
+        <div id="content" >
 
             @yield('content')
 
         </div>
+
     </div>
 
     <div id="footer">
         <div id="contact" class="colonne">
             <h3> CONTACT / INFORMATION </h3>
                 <a href="mailto:communication@bdecesibordeaux.fr" class="nav-link myLink"> communication@bdecesibordeaux.fr </a>
-                <a href="" class="nav-link myLink"> CGU </a>
+                <a href="/CGU" class="nav-link myLink"> CGU </a>
                 <a href="" class="nav-link myLink"> Mentions légales </a>
         </div>
         <div class="whiteBar"></div>

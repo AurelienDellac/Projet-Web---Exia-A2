@@ -1,0 +1,15 @@
+.text {
+    text-align: justify;
+}
+
+.text p{
+    text-indent: 5%;
+}
+
+.text h3{
+    color: #444 !important;
+}
+
+.text h4{
+    color: #566 !important ;
+}
