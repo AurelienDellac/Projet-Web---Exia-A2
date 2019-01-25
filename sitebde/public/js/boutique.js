@@ -3,7 +3,7 @@ $(function (){
     getProducts("");
     $("#formCategory")[0].reset();
     $('#sort').click(function() {
-        getProducts("category/" + $('input[name=cat]:checked').val());
+        getProducts($('input[name=cat]:checked').val());
         
     });
 });
@@ -22,8 +22,7 @@ function getProducts($cat) {
                   " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
                    "</h5> <p class='card-description'>" + product.description +
                     "</p><p class='card-text'>" + product.price + 
-                    "</p> </div> </a>");
-                   
+                    "</p> </div> </a>");      
             });
                 }
                        

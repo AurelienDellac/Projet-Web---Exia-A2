@@ -10,17 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="css/navbar.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-
+        crossorigin="anonymous"> {{HTML::style("css/default.css")}} {{HTML::style("css/navbar.css")}}
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
 
-        <a class="navbar-brand" href="/"><img class="icon" src="images/template/logoInvert.png" alt="LOGO" title="logo" /></a>
+        <a class="navbar-brand" href="/">{{ HTML::image('images/template/logoInvert.png', 'LOGO', array('class' => 'icon', 'title' => 'LOGO CESI')) }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,8 +41,8 @@
                 </li>
             </ul>
 
-            <a class="nav-link myLink" href='#'><img class="icon" src="images/template/iconePanier.png" alt="Panier" title="Panier" /></a>
-            <a class="nav-link myLink" href='#'><img class="icon" src="images/template/iconeProfil.png" alt="Connexion" title="Connexion" /></a>
+            <a class="nav-link myLink" href='#'>{{ HTML::image('images/template/iconePanier.png', 'Panier', array('class' => 'icon', 'title' => 'Panier')) }}</a>
+            <a class="nav-link myLink" href='{{route('register')}}'>{{ HTML::image('images/template/iconeProfil.png', 'Connexion', array('class' => 'icon', 'title' => 'Connexion'))}}</a>
 
         </div>
     </nav>
@@ -64,44 +60,43 @@
 
     </div>
 
-    <div id="footer" class="flex-container">
+    <div id="footer">
         <div id="contact" class="colonne">
             <h3> CONTACT / INFORMATION </h3>
-            <ul>
                 <a href="mailto:communication@bdecesibordeaux.fr" class="nav-link myLink"> communication@bdecesibordeaux.fr </a>
                 <a href="" class="nav-link myLink"> CGU </a>
                 <a href="" class="nav-link myLink"> Mentions légales </a>
-            </ul>
         </div>
         <div class="whiteBar"></div>
+        <div id="sitemap">
         <div id="event" class="colonne">
             <h3> ÉVÈNEMENTIEL </h3>
-            <ul>
                 <a href="/evenements" class="nav-link myLink">Programme</a>
                 <a href="" class="nav-link myLink">Évènements passés</a>
                 <a href="" class="nav-link myLink">Boîte a idée</a>
-            </ul>
         </div>
+
         <div id="boutique" class="colonne">
             <h3><a href="/boutique" class=" myLink">BOUTIQUE </a></h3>
-            <ul>
                 <a href="" class="nav-link myLink">Vêtements </a>
                 <a href="" class="nav-link myLink">Accessoires</a>
                 <a href="" class="nav-link myLink">Billeterie</a>
                 <a href="" class="nav-link myLink">Panier</a>
-            </ul>
+        </div>
         </div>
         <div class="whiteBar"></div>
-        <div id="network" class="flex-container">
+        <div id="network" class="colonne">
             <a href="https://www.facebook.com/bdecesibdx/">
                         <i class="fab fa-facebook fa-3x"></i>
-                    </a>
+            </a>
             <a href="https://www.instagram.com/bde_cesi_bdx/">
                         <i class="fab fa-instagram fa-3x" ></i>
-                    </a>
+                </a>
             <a href="https://www.cesi.fr">
-                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi" class="icon"> </div>
-                    </a>
+                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi" class="icon"> 
+            </a>
+        </div>
+                    
         </div>
     </div>
 
@@ -111,7 +106,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js"></script>
+    {{HTML::script("js/jquery.min.js")}}
 
 </body>
 

@@ -1,5 +1,7 @@
 @extends('Layout') 
-{{HTML::style("css/register.css")}} 
+
+{{HTML::style("css/register.css")}}
+
 @section('title')
 <h1>Connexion</h1>
 @endsection
