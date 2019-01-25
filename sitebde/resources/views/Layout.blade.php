@@ -82,10 +82,10 @@
 
         <div id="boutique" class="colonne">
             <h3><a href="/boutique" class=" myLink">BOUTIQUE </a></h3>
-                <a href="" class="nav-link myLink">Vêtements </a>
-                <a href="" class="nav-link myLink">Accessoires</a>
-                <a href="" class="nav-link myLink">Billeterie</a>
-                <a href="" class="nav-link myLink">Panier</a>
+                <a href="/boutique/1" class="nav-link myLink">Vêtements </a>
+                <a href="/boutique/2" class="nav-link myLink">Accessoires</a>
+                <a href="/boutique/3" class="nav-link myLink">Billeterie</a>
+                <a href="/boutique" class="nav-link myLink">Panier</a>
         </div>
         </div>
         <div class="whiteBar"></div>

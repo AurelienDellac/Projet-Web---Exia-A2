@@ -11,13 +11,15 @@
 */
 
 Route::view('/boutique', 'boutique');
+Route::get('/boutique/{cat}', function ($cat) {
+    return redirect('/boutique?category=' . $cat);
+ });
 Route::view('/', "welcome");
 Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
-Route::view('/product', 'product');
-Route::get('/product/{id}', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@show');
 Route::view('/test', 'auth.passwords.test');
 
 Auth::routes();

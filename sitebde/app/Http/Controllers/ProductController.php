@@ -11,9 +11,8 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        return view ('product').$id;
     }
 
     /**
@@ -45,7 +44,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view(product).$id;
+        return view('product');
     }
 
     /**
