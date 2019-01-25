@@ -46,12 +46,7 @@ class CenterController extends Controller
      */
     public function show($id)
     {
-        return Center::find($id);
-    }
-
-    static public function match($center) 
-    {
-        return Center::where('name', $center)->firstOrFail()->id;
+        return Center::findOrFail($id);
     }
 
     /**
