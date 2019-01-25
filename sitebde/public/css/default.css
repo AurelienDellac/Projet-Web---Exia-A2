@@ -1,13 +1,18 @@
 body{
-    background-image: linear-gradient(#5D89DA,#FFC252) ;
+    
     margin: 0px;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-#content{
+#page{
     flex: 1 0 auto;
+}
+
+#content{
+    background-image: linear-gradient(#5D89DA,#FFC252) ;
+    margin-bottom: -16px;
 }
 
 #bandeau{
@@ -35,7 +40,7 @@ body{
     
 }
    
-li{
+#footer li{
     color: lightgray;
 }
 
