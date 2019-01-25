@@ -41,10 +41,12 @@
 
                     </li>
                 </ul>
-
-                <a class="nav-link myLink" href='#'>{{ HTML::image('images/template/iconePanier.png', 'Panier', array('class' => 'icon', 'title' => 'Panier')) }}</a>
-                <a class="nav-link myLink" href='{{route('register')}}'>{{ HTML::image('images/template/iconeProfil.png', 'Connexion', array('class' => 'icon', 'title' => 'Connexion'))}}</a>
-
+                @if($id != "")
+                    <a class="nav-link myLink" href='#'><i class="fas fa-shopping-basket fa-2x"></i></a>
+                    <a class="nav-link myLink" href='{{route('register')}}'>{{$fullname = $id->forename . "   " . $id->name}}<i class="fas fa-user-circle fa-3x"></i></a>
+                @else
+                <a class="nav-link myLink" href='{{route('register')}}'><i class="fas fa-user-circle fa-3x"></i></a>
+                @endif
             </div>
         </nav>
 
