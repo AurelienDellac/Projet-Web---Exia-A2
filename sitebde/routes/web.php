@@ -17,7 +17,8 @@ Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
 Route::view('/product', 'product');
-Route::view('/product', 'product');
+Route::get('/product/{id}', 'ProductController@index');
+Route::view('/test', 'auth.passwords.test');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
