@@ -1,18 +1,22 @@
-body{
-    
-    margin: 0px;
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
-#page{
-    flex: 1 0 auto;
+header,
+footer {
+    flex: none;
 }
 
-#content{
-    background-image: linear-gradient(#5D89DA,#FFC252) ;
-    margin-bottom: -16px;
+main {
+    flex: auto;
+    background-image: linear-gradient(#5D89DA,#FFC252);
 }
 
 #bandeau{
