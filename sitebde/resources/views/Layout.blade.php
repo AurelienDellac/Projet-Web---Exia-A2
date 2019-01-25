@@ -14,50 +14,52 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
 
-        <a class="navbar-brand" href="/">{{ HTML::image('images/template/logoInvert.png', 'LOGO', array('class' => 'icon', 'title' => 'LOGO CESI')) }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-            aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle myLink" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                    Evenements
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item myLink" href="#">Evenements futurs</a>
-                        <a class="dropdown-item myLink" href="#">Evenements passés</a>
-                        <a class="dropdown-item myLink" href="#">Boite à idée</a>
-                    </div>
-                </li>
-                <li class="nav-item">
+            <a class="navbar-brand" href="/">{{ HTML::image('images/template/logoInvert.png', 'LOGO', array('class' => 'icon', 'title' => 'LOGO CESI')) }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle myLink" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                        Evenements
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item myLink" href="#">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="#">Evenements passés</a>
+                            <a class="dropdown-item myLink" href="#">Boite à idée</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
 
-                    <a href="/boutique" class="button nav-link myLink">Boutique</a>
+                        <a href="/boutique" class="button nav-link myLink">Boutique</a>
 
-                </li>
-            </ul>
+                    </li>
+                </ul>
 
-            <a class="nav-link myLink" href='#'>{{ HTML::image('images/template/iconePanier.png', 'Panier', array('class' => 'icon', 'title' => 'Panier')) }}</a>
-            <a class="nav-link myLink" href='{{route('register')}}'>{{ HTML::image('images/template/iconeProfil.png', 'Connexion', array('class' => 'icon', 'title' => 'Connexion'))}}</a>
+                <a class="nav-link myLink" href='#'>{{ HTML::image('images/template/iconePanier.png', 'Panier', array('class' => 'icon', 'title' => 'Panier')) }}</a>
+                <a class="nav-link myLink" href='{{route('register')}}'>{{ HTML::image('images/template/iconeProfil.png', 'Connexion', array('class' => 'icon', 'title' => 'Connexion'))}}</a>
+
+            </div>
+        </nav>
+
+        <div id="bandeau">
+            <img src="/images/template/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau">
+            <div class="title">
+                @yield("title")
+            </div>
+        </div>
+
+        <div>
+
+            @yield('content')
 
         </div>
-    </nav>
-
-    <div id="bandeau">
-        <img src="/images/template/CesiBordeaux.jpg" alt="photo du CESI bordeaux" id="imgBandeau">
-        <div class="title">
-            @yield("title")
-        </div>
-    </div>
-
-    <div>
-
-        @yield('content')
-
     </div>
 
     <div id="footer">
