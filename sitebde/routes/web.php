@@ -17,8 +17,9 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
-Route::view('/product', 'product');
-Route::view('/product', 'product');
+Route::get('/produit/{numberProd}', 'ProductController@display');
+Route::resource('product','ProductController');
+Route::view('/addProduct', 'addProduct');
 Route::view('/test', 'auth.passwords.test');
 
 Auth::routes();
