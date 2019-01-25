@@ -60,44 +60,43 @@
 
     </div>
 
-    <div id="footer" class="flex-container">
+    <div id="footer">
         <div id="contact" class="colonne">
             <h3> CONTACT / INFORMATION </h3>
-            <ul>
                 <a href="mailto:communication@bdecesibordeaux.fr" class="nav-link myLink"> communication@bdecesibordeaux.fr </a>
                 <a href="" class="nav-link myLink"> CGU </a>
                 <a href="" class="nav-link myLink"> Mentions légales </a>
-            </ul>
         </div>
         <div class="whiteBar"></div>
+        <div id="sitemap">
         <div id="event" class="colonne">
             <h3> ÉVÈNEMENTIEL </h3>
-            <ul>
                 <a href="/evenements" class="nav-link myLink">Programme</a>
                 <a href="" class="nav-link myLink">Évènements passés</a>
                 <a href="" class="nav-link myLink">Boîte a idée</a>
-            </ul>
         </div>
+
         <div id="boutique" class="colonne">
             <h3><a href="/boutique" class=" myLink">BOUTIQUE </a></h3>
-            <ul>
                 <a href="" class="nav-link myLink">Vêtements </a>
                 <a href="" class="nav-link myLink">Accessoires</a>
                 <a href="" class="nav-link myLink">Billeterie</a>
                 <a href="" class="nav-link myLink">Panier</a>
-            </ul>
+        </div>
         </div>
         <div class="whiteBar"></div>
-        <div id="network" class="flex-container">
+        <div id="network" class="colonne">
             <a href="https://www.facebook.com/bdecesibdx/">
                         <i class="fab fa-facebook fa-3x"></i>
-                    </a>
+            </a>
             <a href="https://www.instagram.com/bde_cesi_bdx/">
                         <i class="fab fa-instagram fa-3x" ></i>
-                    </a>
+                </a>
             <a href="https://www.cesi.fr">
-                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi" class="icon"> </div>
-                    </a>
+                    <img src="/images/template/CESIAlumni.png" alt="logo cesi" id="logoCesi" class="icon"> 
+            </a>
+        </div>
+                    
         </div>
     </div>
 

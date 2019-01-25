@@ -3,7 +3,7 @@ $(function (){
     getProducts("");
     $("#formCategory")[0].reset();
     $('#sort').click(function() {
-        getProducts("category/" + $('input[name=cat]:checked').val());
+        getProducts($('input[name=cat]:checked').val());
         
     });
 });

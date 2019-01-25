@@ -1,23 +1,28 @@
 
 <link rel="stylesheet" type="text/css" href="css/boutique.css" media="all"/>
-    <title>Boutique</title>
+    <title>BDE CESI Bordeaux - Boutique</title>
 
 @extends('layout')
-
+@section('title')
+    <h1>Boutique</h1>
+@endsection
 @section('content')
 <div class="shopContainer">
   <aside>
   <form id='formCategory' action="#">
     <p>Catégories</p>
     <div id='blabla'>
-      <input type="radio" name="cat" value="1">
+      <input type="radio" name="cat" value="category/1">
       <label for="catégorieChoix1">Vetements</label><br>
 
-      <input type="radio"  name="cat"  value="2">
+      <input type="radio"  name="cat"  value="category/2">
       <label for="catégorieChoix2">Accessoires</label> <br>
 
-      <input type="radio"  name="cat"  value="3">
-      <label for="catégorieChoix3">Billets</label> <br> 
+      <input type="radio"  name="cat"  value="category/3">
+      <label for="catégorieChoix3">Billets</label> <br>
+      
+      <input type="radio"  name="cat"  value="">
+      <label for="catégorieChoix3">#nofilter</label> <br> 
     </div>
     <div>
       <button id="sort" class ='button' type="button">Filtrer</button>
