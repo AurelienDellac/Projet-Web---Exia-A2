@@ -20,9 +20,13 @@ Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::view('/panier', 'panier');
 Route::get('/product/{id}', 'ProductController@show');
+Route::view('/addProduct', 'addProduct');
+
 Route::view('/test', 'auth.passwords.test');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::view('/boiteIdee', 'boiteIdee');
+Route::view('/creerIdee', 'creerIdee');
 
