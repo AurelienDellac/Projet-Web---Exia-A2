@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +11,7 @@
 */
 
 Route::view('/boutique', 'boutique');
-Route::view('/', 'welcome');
+Route::view('/', "welcome");
 Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
