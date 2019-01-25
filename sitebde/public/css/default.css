@@ -43,6 +43,16 @@ li{
     background-color: white;
 }
 
+.myLink i {
+    color: #fff;
+    margin-left : 10px;
+}
+
+.myLink {
+    display: flex;
+    align-items: center;
+}
+
 .icon:hover{
     background-color: rgb(59, 89, 152) !important;
 }
@@ -73,11 +83,12 @@ li{
     color: rgb(220, 220, 220);
     text-decoration: none;
 }
-.myLink:hover
+.myLink:hover, .myLink:hover > i 
 {
     color: rgb(59, 89, 152) !important;
     text-decoration: none;
 }
+
 .myLink:active
 {
     color: rgb(220, 220, 220);
