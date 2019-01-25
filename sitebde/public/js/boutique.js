@@ -16,7 +16,7 @@ function getProducts($cat) {
         url: "http://10.133.129.169:3000/products/" + $cat,
         success: function(products) {
             $.each(products, function(i, product){
-                $products.append("<a class='card link' href='produit/" + 
+                $products.append("<a class='card link' href='product/" + 
                 product.id + 
                 " '> <img class='card-img-top' src=" + 'images/produits/' + product.img_src +
                   " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
