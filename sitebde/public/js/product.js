@@ -14,7 +14,7 @@ function getProducts($y) {
     $products.empty();
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/products/" + $y,
+        url: "http://91.164.43.11:50000/products/" + $y,
         success: function(products) {
             $.each(products, function(i, product){
                 $products.append("<a class='card link'> <img class='card-img-top' src=" + '/images/produits/' + product.img_src +
