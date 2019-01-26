@@ -14,7 +14,6 @@
 <a> </a>
 </aside>
 
-{{HTML::image("images/produits/pull.png")}}
 <div class="productPanel" id="products"></div>
 
 
