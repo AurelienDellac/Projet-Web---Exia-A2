@@ -10,7 +10,7 @@ $(function (){
         $ideas.empty();
         $.ajax({
             type:'GET',
-            url: "http://10.133.129.169:3000/ideas/",
+            url: "http://91.164.43.11:50000/ideas/",
             success: function(ideas) {
                 $.each(ideas, function(i, idea){
                     $ideas.append("<a class='card link'> <img class='card-img-top' src=" + '/images/events/' + idea.img_src +
