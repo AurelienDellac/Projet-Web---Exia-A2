@@ -194,3 +194,7 @@ main {
     margin:10px;
 }
 }
+
+#logout:hover {
+    cursor: url('../images/template/logout.svg'), auto!important;
+}
