@@ -28,9 +28,9 @@
                         Evenements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item myLink" href="#">Evenements futurs</a>
-                            <a class="dropdown-item myLink" href="#">Evenements passés</a>
-                            <a class="dropdown-item myLink" href="#">Boite à idée</a>
+                            <a class="dropdown-item myLink" href="evenementsPassees">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="evenementsFutur">Evenements passés</a>
+                            <a class="dropdown-item myLink" href="boiteIdee">Boite à idée</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -41,7 +41,7 @@
                 </ul>
                 @if($id != "")
                     <a class="nav-link myLink" href='#'><i class="fas fa-shopping-basket fa-2x"></i></a>
-                    <a class="nav-link myLink" href='{{route('register')}}'>{{$fullname = $id->forename . "   " . $id->name}}<i class="fas fa-user-circle fa-3x"></i></a>
+                    <a class="nav-link myLink" id="logout" href='{{route('register')}}'>{{$fullname = $id->forename . "   " . $id->name}}<i class="fas fa-user-circle fa-3x"></i></a>
                 @else
                 <a class="nav-link myLink" href='{{route('register')}}'><i class="fas fa-user-circle fa-3x"></i></a>
                 @endif
