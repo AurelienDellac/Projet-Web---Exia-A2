@@ -52,8 +52,8 @@ main {
     background-color: white;
 }
 
-.navbar-collapse .myLink {
-     padding-left: 0px!important;
+#logout, #basket {
+    padding-left: 0px!important;
 }
 
 .myLink i {

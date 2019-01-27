@@ -9,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Auth;
 
 Route::view('/boutique', 'boutique');
 Route::get('/boutique/{cat}', function ($cat) {
@@ -24,13 +25,17 @@ Route::get('/product/{id}', 'ProductsController@show');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::view('/boiteIdee', 'boiteIdee');
+
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/creerIdee', 'IdeasController@create')->name('createIdea');
     Route::post('/creerIdee', 'IdeasController@store')->name('storeIdea');
     Route::post('/storeOrder', 'OrdersController@store')->name('storeOrder');
-    Route::view('/panier', 'panier');
+    Route::post('/destroyOrder/{id}', 'OrdersController@destroy')->name('destroyOrder');
+    Route::get('/panier', 'OrdersController@index')->name('showBasket');
+    Route::post('/panier', 'OrdersController@confirm')->name('confirmOrders');
+    Route::view('/boiteIdee', 'boiteIdee');
 });
 
 Route::group(['middleware' => 'member'], function () {
@@ -41,6 +46,6 @@ Route::group(['middleware' => 'member'], function () {
     Route::get('/creerActivite', 'ActivitiesController@create')->name('createActivity');
     Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
     Route::post('/creerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
-
+    Route::get('/panier/{id}/{date}', 'OrdersController@show')->name('showUserBasket');
 });
 

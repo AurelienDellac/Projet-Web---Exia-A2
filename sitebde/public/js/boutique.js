@@ -57,7 +57,6 @@ function getProducts($cat, $order) {
 }
 
 function setCategory($cat) {
-    console.log(':radio[name=cat][value="' + $cat +'"]');
     let box = ':radio[name=cat][value="' + $cat +'"]';
     $('#formCategory').find(box).prop('checked', true);
 }
@@ -74,7 +73,6 @@ function setAutoComplete() {
             $.each(products, function(i, product){
                 productList.push({"label" : product.label, "value" : product.id});
             });
-            console.log(products);
             $("#search").autocomplete({
                 source : productList,
 
