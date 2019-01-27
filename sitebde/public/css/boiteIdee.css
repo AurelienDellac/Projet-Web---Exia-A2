@@ -1,0 +1,60 @@
+#idee {
+  background-color: #F9F9F9;
+}
+
+
+
+.lib-row {
+    width: 100%;
+}
+
+
+
+.card-text {
+    position: initial;   
+}
+
+.lib-panel {
+  margin-bottom: 20Px;
+  width: 1000px;
+}
+.lib-panel img {
+  width: 100%;
+  background-color: transparent;
+}
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+}
+
+
+.lib-panel .lib-row {
+  padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+  background-color: #FFFFFF;
+  font-size: 20px;
+  padding: 10px 20px 0 20px;
+}
+
+
+.lib-panel .lib-row.lib-desc {
+  position: relative;
+  height: auto;
+  display: block;
+  font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  left: 20px;
+}
+
+.row-margin-bottom {
+  margin-bottom: 20px;
+}

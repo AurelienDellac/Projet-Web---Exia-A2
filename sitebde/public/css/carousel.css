@@ -1,0 +1,50 @@
+.carousel-indicators li {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: lightblue;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    background-color: #ffff99;
+}
+.carousel-inner img {
+  width: 30%;
+  height: 20%;
+}
+.carousel-control-prev {
+    color: blue;
+}
+.carousel{
+    background-color: lightblue;
+}
+.fa-facebook{
+    color: black;
+}
+.fa-facebook:hover{
+    color: blue;
+}
+.fa-twitter{
+    color: black;
+}
+.fa-twitter:hover{
+    color: teal;
+}
+font-family : Georgia,serif;
+.Jour{
+    background: white;
+}
+
+.Nuit{
+    background: black;
+}
+
+section p{font-style: italic ;}

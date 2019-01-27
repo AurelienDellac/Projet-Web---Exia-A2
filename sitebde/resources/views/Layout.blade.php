@@ -23,14 +23,14 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle myLink" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle myLink" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         Evenements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item myLink" href="evenementsPassees">Evenements futurs</a>
-                            <a class="dropdown-item myLink" href="evenementsFutur">Evenements passés</a>
-                            <a class="dropdown-item myLink" href="boiteIdee">Boite à idée</a>
+                            <a class="dropdown-item myLink" href="/evenementsPassees">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="/evenementsFutur">Evenements passés</a>
+                            <a class="dropdown-item myLink" href="/boiteIdee">Boite à idée</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -74,7 +74,7 @@
                 <h3> ÉVÈNEMENTIEL </h3>
                     <a href="/evenements" class="nav-link myLink">Programme</a>
                     <a href="" class="nav-link myLink">Évènements passés</a>
-                    <a href="" class="nav-link myLink">Boîte a idée</a>
+                    <a href="/boiteIdee" class="nav-link myLink">Boîte a idée</a>
             </div>
 
             <div id="boutique" class="colonne">
