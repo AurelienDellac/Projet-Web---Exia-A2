@@ -22,13 +22,23 @@ function getEvents($order) {
             }
 
             $.each(evenements, function(i, evenement){
-                $evenements.append("<a class='card link' href='evenement/" + 
-                evenement.id + 
-                " '> <img class='card-img-top' src=" + 'images/events/' + evenement.img_src +
-                " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + evenement.title +
-                "</h5> <p class='card-description'>" + evenement.description +
-                    "</p><p class='card-text'>" + evenement.date + 
-                    "</p> </div> </a>");      
+                var date = new Date(evenement.date);
+                var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+                var months = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Decembre"];
+
+                $evenements.append(
+                    "<a class='card link' href='evenement/"+ evenement.id +" '>" + 
+                        "<div id='cardContent'>"+
+                            "<img class='card-img column left' src=" + 'images/events/' + evenement.img_src +" alt='Card image cap'>" +
+                            "<div class='card-body column center'>"+  
+                                "<h5 class='card-title'>" + evenement.title + "</h5>"+
+                                "<p class='card-description'>" + evenement.description + "</p>"+
+                            "</div>"+
+                            "<div class='column right'>"+
+                                "<p class='card-text'>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
+                            
+                        "</div>"+
+                    "</a>");      
             });
         }             
     });
