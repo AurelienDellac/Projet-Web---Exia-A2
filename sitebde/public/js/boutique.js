@@ -28,7 +28,9 @@ function getProducts($cat, $order) {
     $products.empty();
     $.ajax({
         type:'GET',
+
         url: "http://91.164.43.11:50000/products/" + $cat,
+      
         success: function(products) {
 
             if($order == "down") {
@@ -63,7 +65,9 @@ function setCategory($cat) {
 function setAutoComplete() {
     $.ajax({
         type:'GET',
+
         url: "http://91.164.43.11:50000/products/",
+
         success: function(products) {
             
             var productList = [];

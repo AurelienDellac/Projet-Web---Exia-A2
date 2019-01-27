@@ -13,7 +13,9 @@ function getProducts(t) {
     $products.empty();
     $.ajax({
         type:'GET',
+
         url: "http://91.164.43.11:50000/products/" + t,
+
         success: function(products) {
             
 console.log(products);
