@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Http\Controllers\CategoriesController;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -113,6 +114,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
+        $file = Product::findOrFail($id)->img_src;
+        Storage::disk('images')->delete($file);
         Product::destroy($id);
         return redirect("boutique");
     }

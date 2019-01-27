@@ -29,8 +29,6 @@ Route::view('/boiteIdee', 'boiteIdee');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/creerIdee', 'IdeasController@create')->name('createIdea');
     Route::post('/creerIdee', 'IdeasController@store')->name('storeIdea');
-    Route::get('/creerActivite', 'ActivitiesController@create')->name('createActivity');
-    Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
     Route::view('/panier', 'panier');
 });
 
@@ -38,5 +36,10 @@ Route::group(['middleware' => 'member'], function () {
     Route::get('/addProduct', 'ProductsController@create')->name('addProduct');
     Route::post('/addProduct', 'ProductsController@store')->name('storeProduct');
     Route::post('/product/{id}', 'ProductsController@destroy')->name('destroyProduct');
+    
+    Route::get('/creerActivite', 'ActivitiesController@create')->name('createActivity');
+    Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
+    Route::post('/creerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
+
 });
 

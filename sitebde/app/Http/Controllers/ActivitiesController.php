@@ -106,6 +106,9 @@ class ActivitiesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $file = Activity::findOrFail($id)->img_src;
+        Storage::disk('images')->delete($file);
+        Activity::destroy($id);
+        return redirect("welcome");
     }
 }
