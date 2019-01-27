@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Orders;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class OrdersController extends Controller
 {
@@ -35,7 +36,23 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'quantity' => 'Numeric',
+            'submit' => 'Numeric|required',
+        ]);
+
+        $data = $request->all();
+
+        if($data["submit"] == null) {
+            $data["submit"] = 1;
+        }
+
+        Order::create([
+            'quantity' => $data['quantity'],
+            'id_product' => $data['submit'],
+            'id_user' => Auth::user()->id,
+        ]);
+        return \redirect()->back();
     }
 
     /**

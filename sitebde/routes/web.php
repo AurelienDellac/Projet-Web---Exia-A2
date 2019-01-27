@@ -29,6 +29,7 @@ Route::view('/boiteIdee', 'boiteIdee');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/creerIdee', 'IdeasController@create')->name('createIdea');
     Route::post('/creerIdee', 'IdeasController@store')->name('storeIdea');
+    Route::post('/storeOrder', 'OrdersController@store')->name('storeOrder');
     Route::view('/panier', 'panier');
 });
 
