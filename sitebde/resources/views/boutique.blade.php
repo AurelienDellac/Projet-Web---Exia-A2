@@ -39,7 +39,7 @@
             <label for="choice3">#nofilter</label><br>
             <button id="sort" class='button' type="button">Filtrer</button> 
         </form>
-        @if($id != null && $id->id_role == "2") 
+        @if($user != null && $user->id_role == "2") 
             <div class="aside-zone">
                 <a href="{{route("addProduct")}}"><button class='button' type="button">Ajouter un produit</button></a>
             </div>
