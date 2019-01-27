@@ -48,7 +48,7 @@ function getProducts($cat, $order) {
                 " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
                 "</h5> <p class='card-description'>" + product.description +
                     "</p><p class='card-text'>" + product.price + 
-                    "</p> </div> </a>");      
+                    " €</p> </div> </a>");      
             });
         }             
     });
