@@ -25,7 +25,7 @@ class ActivitiesController extends Controller
      */
     public function create()
     {
-        return view("creerIdee");
+        return view("creerActivite");
     }
 
     /**
@@ -61,7 +61,7 @@ class ActivitiesController extends Controller
             ]);
         }
         
-        return redirect("boiteIdee");
+        return redirect("evenements");
     }
 
     /**

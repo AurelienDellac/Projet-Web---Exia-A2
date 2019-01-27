@@ -39,7 +39,7 @@ class IdeasController extends Controller
     {
         ActivitiesController::store($request);
         VotesController::initialStore(ActivitiesController::show(Auth::user()->id)->id);
-        return redirect("home");
+        return redirect("boiteIdee");
     }
 
     /**
