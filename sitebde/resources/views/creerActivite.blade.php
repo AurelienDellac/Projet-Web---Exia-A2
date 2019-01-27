@@ -6,18 +6,18 @@
 @extends ('layout')
 
 @section('title')
-    <h1>Créer une idée</h1>
+    <h1>Créer une activité</h1>
 @endsection
 
 @section('content')
 
 
 
-<form method="POST" enctype="multipart/form-data" action="{{route("storeIdea")}}">
+<form method="POST" enctype="multipart/form-data" action="{{route("storeActivity")}}">
   @csrf
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="title">Nom de l'idée</label>
+        <label for="title">Nom de l'activité</label>
         <input type="text" class="form-control" id="title" name="title" placeholder="Idée">
       </div>
     </div>

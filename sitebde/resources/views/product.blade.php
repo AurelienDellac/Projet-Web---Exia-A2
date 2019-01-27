@@ -1,22 +1,11 @@
-
-
-<link rel="stylesheet" type="text/css" href="css/product.css" media="all"/>
-{{HTML::style("css/boutique.css")}}
-
-<title>Boutique</title>
-
 @extends('layout')
+<title>Boutique</title>
+{{HTML::style("css/boiteIdee.css")}}
 
 @section('content')
-
-<aside class="img">
-
-<a> </a>
-</aside>
-
-{{HTML::image("images/produits/pull.png")}}
-<div class="productPanel" id="products"></div>
-
+<div class="productPanel" id="products">
+    
+</div>
 
 @stop
 

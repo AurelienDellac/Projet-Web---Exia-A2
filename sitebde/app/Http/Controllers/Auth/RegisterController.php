@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use App\Http\Controllers\CenterController;
+use App\Http\Controllers\CentersController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -78,6 +78,6 @@ class RegisterController extends Controller
     }
 
     static public function showRegistrationForm() {
-        return view("auth/register", ["centers" => CenterController::index()]);
+        return view("auth/register", ["centers" => CentersController::index()]);
     }
 }

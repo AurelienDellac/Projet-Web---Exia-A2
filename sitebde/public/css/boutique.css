@@ -5,10 +5,10 @@ aside{
 	height: fit-content;
 }
   
-form{
+.aside-zone {
 	background-color: white;
 	padding: 5px;
-	border:1px solid rgb(59, 89, 152);
+	border:1px solid #5D89DA;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -16,7 +16,7 @@ form > p{
   font-size: 30px;
 }
 button{
-  background-color: rgb(59, 89, 152);
+  background-color: #5D89DA;
   color: white;
 }
 

@@ -11,6 +11,7 @@ class Center extends Model
      *
      * @var array
      */
+    public $timestamps = false;
     protected $fillable = [
         'id', 'name'
     ];

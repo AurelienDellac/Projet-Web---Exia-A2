@@ -28,7 +28,9 @@ function getProducts($cat, $order) {
     $products.empty();
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/products" + $cat,
+
+        url: "http://91.164.43.11:50000/products/" + $cat,
+      
         success: function(products) {
 
             if($order == "down") {
@@ -44,11 +46,11 @@ function getProducts($cat, $order) {
             $.each(products, function(i, product){
                 $products.append("<a class='card link' href='product/" + 
                 product.id + 
-                " '> <img class='card-img-top' src=" + 'images/produits/' + product.img_src +
+                " '> <img class='card-img-top' src=" + 'images/' + product.img_src +
                 " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +
                 "</h5> <p class='card-description'>" + product.description +
                     "</p><p class='card-text'>" + product.price + 
-                    "</p> </div> </a>");      
+                    " €</p> </div> </a>");      
             });
         }             
     });
@@ -63,7 +65,9 @@ function setCategory($cat) {
 function setAutoComplete() {
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/products",
+
+        url: "http://91.164.43.11:50000/products/",
+
         success: function(products) {
             
             var productList = [];

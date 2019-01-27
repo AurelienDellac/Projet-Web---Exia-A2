@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Vote;
 
-class ProductController extends Controller
+class VotesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -22,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -33,7 +36,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id' => 'Numeric|required|exists:activities,id',
+        ]);
+        
+        $data = $request->all();
+        Vote::create([
+            'id_activity' => $data['label'],
+            'id_user' => Auth::user()->id,
+        ]);
+        
+        return redirect("boiteIdee");
+    }
+
+    static public function initialStore($id_activity)
+    {
+        Vote::create([
+            'id_activity' => $id_activity,
+            'id_user' => Auth::user()->id,
+        ]);
+        
+        return redirect("boiteIdee");
     }
 
     /**
@@ -44,7 +67,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('product');
+        //
     }
 
     /**
