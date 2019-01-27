@@ -1,15 +1,11 @@
 @extends('layout')
-
 <title>Boutique</title>
-{{HTML::style("css/product.css")}}
-{{HTML::style("css/boutique.css")}}
+{{HTML::style("css/boiteIdee.css")}}
 
 @section('content')
-
-<div class="productPanel" id="products"></div>
-{{-- <form method="POST" action="/destroyProduct/22" onsubmit="confirm('Supprimer ce produit ?')">
-    <button type="submit">Supprimer produit</button>
-</form> --}}
+<div class="productPanel" id="products">
+    
+</div>
 
 @stop
 
