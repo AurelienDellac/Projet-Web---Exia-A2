@@ -1,7 +1,6 @@
 
 
-<link rel="stylesheet" type="text/css" href="css/product.css" media="all"/>
-{{HTML::style("css/boutique.css")}}
+{{HTML::style("css/boiteIdee.css")}}
 
 <title>Boutique</title>
 
@@ -9,12 +8,11 @@
 
 @section('content')
 
-<aside class="img">
 
-<a> </a>
-</aside>
 
-<div class="productPanel" id="products"></div>
+<div class="productPanel" id="products">
+    
+</div>
 
 
 @stop
