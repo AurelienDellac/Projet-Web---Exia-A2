@@ -1,21 +1,15 @@
-
-
-<link rel="stylesheet" type="text/css" href="css/product.css" media="all"/>
-{{HTML::style("css/boutique.css")}}
+@extends('layout')
 
 <title>Boutique</title>
-
-@extends('layout')
+{{HTML::style("css/product.css")}}
+{{HTML::style("css/boutique.css")}}
 
 @section('content')
 
-<aside class="img">
-
-<a> </a>
-</aside>
-
 <div class="productPanel" id="products"></div>
-
+{{-- <form method="POST" action="/destroyProduct/22" onsubmit="confirm('Supprimer ce produit ?')">
+    <button type="submit">Supprimer produit</button>
+</form> --}}
 
 @stop
 

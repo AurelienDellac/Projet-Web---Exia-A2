@@ -13,4 +13,4 @@ routes(app);
 
 app.listen(port);
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('BDE CESI Bordeaux RESTful API server started on: ' + port);

@@ -13,23 +13,24 @@
 
 
 
-<form method="POST" >
+<form method="POST" enctype="multipart/form-data" action="{{route("storeIdea")}}">
+  @csrf
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="input">Nom de l'idée</label>
-        <input type="text" class="form-control" id="nameIdea" placeholder="Idée">
+        <label for="title">Nom de l'idée</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Idée">
       </div>
     </div>
     <div class="form-group">
-      <label for="input">Description</label>
-      <input type="text" class="form-control" id="description" placeholder="Description">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" placeholder="Description">
     </div>
     <a>Choisir une image</a>
 
     <div class="form-row">
 
   <input type="file"
-         id="avatar" name="avatar"
+         id="image" name="image"
          accept="image/png, image/jpeg">
     </div>
     

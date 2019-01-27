@@ -18,20 +18,25 @@ Route::view('/', "welcome");
 Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
-Route::view('/panier', 'panier');
-Route::get('/product/{id}', 'ProductController@show');
+Route::get('/product/{id}', 'ProductsController@show');
 
-
-Route::view('/test', 'auth.passwords.test');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::view('/boiteIdee', 'boiteIdee');
-Route::view('/creerIdee', 'creerIdee');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/creerIdee', 'IdeasController@create')->name('createIdea');
+    Route::post('/creerIdee', 'IdeasController@store')->name('storeIdea');
+    Route::get('/creerActivite', 'ActivitiesController@create')->name('createActivity');
+    Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
+    Route::view('/panier', 'panier');
+});
 
 Route::group(['middleware' => 'member'], function () {
-    Route::get('/addProduct', 'ProductController@create')->name('addProduct');
-    Route::post('/addProduct', 'ProductController@store')->name('storeProduct');
+    Route::get('/addProduct', 'ProductsController@create')->name('addProduct');
+    Route::post('/addProduct', 'ProductsController@store')->name('storeProduct');
+    Route::post('/product/{id}', 'ProductsController@destroy')->name('destroyProduct');
 });
 

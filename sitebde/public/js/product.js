@@ -1,10 +1,9 @@
 $(function (){
     
 var chemin = window.location.pathname;
-var t = chemin.substring(9);
-$y=t[0];
-
-    getProducts($y);
+var t = chemin.split('/');
+$y=t[2];
+getProducts($y);
     
 });
 
@@ -14,8 +13,10 @@ function getProducts($y) {
     $products.empty();
     $.ajax({
         type:'GET',
-        url: "/91.164.43.11:50000/products" + $y,
+        url: "http://91.164.43.11:50000/products/" + $y,
         success: function(products) {
+            
+console.log(products);
             $.each(products, function(i, product){
                 $products.append("<a class='card link'> <img class='card-img-top' src=" + '/images/' + product.img_src +
                   " ' alt='Card image cap'> <div class='card-body'>  <h5 class='card-title'>" + product.label +

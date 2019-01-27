@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Center;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Vote;
 
-class CenterController extends Controller
+class VotesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    static public function index()
+    public function index()
     {
-        return Center::all();
+        //
     }
 
     /**
@@ -24,7 +25,7 @@ class CenterController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -35,7 +36,27 @@ class CenterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $validatedData = $request->validate([
+            'id' => 'Numeric|required|exists:activities,id',
+        ]);
+        $data = $request->all();
+        Vote::create([
+            'id_activity' => $data['label'],
+            'id_user' => Auth::user()->id,
+        ]);
+        
+        return redirect("boiteIdee");
+    }
+
+    static public function initialStore($id_activity)
+    {
+        Vote::create([
+            'id_activity' => $id_activity,
+            'id_user' => Auth::user()->id,
+        ]);
+        
+        return redirect("boiteIdee");
     }
 
     /**
@@ -46,7 +67,7 @@ class CenterController extends Controller
      */
     public function show($id)
     {
-        return Center::findOrFail($id);
+        //
     }
 
     /**
