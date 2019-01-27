@@ -1,19 +1,11 @@
-
-
+@extends('layout')
+<title>Boutique</title>
 {{HTML::style("css/boiteIdee.css")}}
 
-<title>Boutique</title>
-
-@extends('layout')
-
 @section('content')
-
-
-
 <div class="productPanel" id="products">
     
 </div>
-
 
 @stop
 

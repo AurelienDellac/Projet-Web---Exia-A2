@@ -27,10 +27,7 @@ class ProfileComposer
      */
     public function compose(View $view)
     {
-        $id = "";
-        if (Auth::check()) {
-            $id = Auth::user();
-        } 
+        $id = Auth::user();
         $view->with('id', $id);
     }
 }
