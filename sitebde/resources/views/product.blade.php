@@ -4,7 +4,14 @@
 
 @section('content')
 <div class="productPanel" id="products">
-    
+    @if($user != null && $user->id_role == 2)
+        </div><hr>
+        <form method="POST" action="{{route('destroyProduct', ['id' => $id])}}" onsubmit="confirm('Êtes vous sur de vouloir supprimer ce produit ?')">
+            @csrf
+            <button type='submit' class='btn btn-danger'> Supprimer ce produit </button>
+        </form>
+        </div>
+    @endif
 </div>
 
 @stop

@@ -27,7 +27,7 @@ class ProfileComposer
      */
     public function compose(View $view)
     {
-        $id = Auth::user();
-        $view->with('id', $id);
+        $user = Auth::user();
+        $view->with('user', $user);
     }
 }
