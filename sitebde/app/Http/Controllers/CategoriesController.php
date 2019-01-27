@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Http\Controllers\CategoriesController;
+use App\Models\Category;
 
-class ProductController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    static public function index()
     {
+        return Category::all();
     }
 
     /**
@@ -24,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-      return view("addProduct", ["categories" => CategoriesController::index()]);;
+        //
     }
 
     /**
@@ -35,31 +35,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'label' => 'String|required|max:45',
-            'description' => 'String|required|max:500',
-            'price' => 'Numeric|required',
-            'category' => 'Numeric|required',
-            'image' => 'image|max:1000',
-            'stock' => 'Numeric|required'
-        ]);
-
-        $image = $request->file('image');
-        if ($image) {
-            $image = $image->store('produits', 'images');
-        }
-
-        $data = $request->all();
-        Product::create([
-            'label' => $data['label'],
-            'description' => $data['description'],
-            'price' => $data['price'],
-            'id_category' => $data['category'],
-            'img_src' => $image,
-            'stock' => $data['stock']
-        ]);
-
-        return redirect("boutique");
+        //
     }
 
     /**
@@ -70,7 +46,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('product');
+        //
     }
 
     /**

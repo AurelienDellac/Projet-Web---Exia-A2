@@ -39,7 +39,7 @@
 
                     </li>
                 </ul>
-                @if($id != "")
+                @if($id != null)
                     <a class="nav-link myLink" href='#'><i class="fas fa-shopping-basket fa-2x"></i></a>
                     <a class="nav-link myLink" id="logout" href='{{route('register')}}'>{{$fullname = $id->forename . "   " . $id->name}}<i class="fas fa-user-circle fa-3x"></i></a>
                 @else
