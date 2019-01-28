@@ -25,7 +25,7 @@ function getEvents($order) {
         url: "http://10.133.129.169:3000/events/" +$order,
         success: function(evenements) {
 
-            $.each(evenements, function(evenement){
+            $.each(evenements, function(i, evenement){
                 var date = new Date(evenement.date);
 
                 $evenements.append(
