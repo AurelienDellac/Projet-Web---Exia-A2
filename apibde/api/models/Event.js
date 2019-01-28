@@ -8,7 +8,8 @@ var Event = function(){
 Event.getAllEvent = function getAllEvent(result) {
         sql.query(`SELECT events.id, title, description, date, fee, img_src from events 
                     INNER JOIN activities ON events.id_activity=activities.id
-                    WHERE masked IS null`, function (err, res) {
+                    WHERE masked IS null
+                    ORDER BY date DESC`, function (err, res) {
 
                 if(err) {
                     console.log("error: ", err);
@@ -24,7 +25,8 @@ Event.getAllEvent = function getAllEvent(result) {
 Event.getAllPastEvent = function getAllPastEvent(result) {
     sql.query(`SELECT events.id, title, description, date, fee, img_src from events 
                 INNER JOIN activities ON events.id_activity=activities.id
-                WHERE masked IS null AND date < CURDATE()`, function (err, res) {
+                WHERE masked IS null AND date < CURDATE()
+                ORDER BY date DESC`, function (err, res) {
 
             if(err) {
                 console.log("error: ", err);
@@ -40,7 +42,8 @@ Event.getAllPastEvent = function getAllPastEvent(result) {
 Event.getAllFutureEvent = function getAllFutureEvent(result) {
     sql.query(`SELECT events.id, title, description, date, fee, img_src from events 
                 INNER JOIN activities ON events.id_activity=activities.id
-                WHERE masked IS null AND date >= CURDATE()`, function (err, res) {
+                WHERE masked IS null AND date >= CURDATE()
+                ORDER BY date ASC`, function (err, res) {
 
             if(err) {
                 console.log("error: ", err);

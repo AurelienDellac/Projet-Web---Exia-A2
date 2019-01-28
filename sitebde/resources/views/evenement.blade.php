@@ -26,18 +26,39 @@
                 </div>
                 <div class="eventItem">
                     @if($user != null && $user->id_role == 2)
-                        <div class="eventLabel labelLeft" id="pdfLabel">
+                    <div class="eventLabel labelLeft" id="pdfLabel">
+                        <button class="btn btn-dark" type="button" id="pdf">Inscrits.pdf</button>
+                    </div>
+                    <div class="eventLabel labelAdmin" id="">
+                        <form method="POST" action="{{route('maskedEvent', ['id' => $id_event])}}" onsubmit="return confirm('Signaler cet évènement ?')">
+                            @csrf
+                            <button class="btn btn-danger" type="submit" id="pdf">Signaler l'évènement</button>
+                        </form>
+                        <form method="POST" action="{{route('destroyEvent', ['id' => $id_event])}}" onsubmit="return confirm('Supprimer cet évènement ?')">
+                            @csrf
+                            <button class="btn btn-danger" type="submit" id="pdf">Supprimer l'évènement</button>
+                        </form>
+                    </div>
+                    @endif 
+                    @if ($user != null && $user->id_role == 3)
+                    <div class="eventLabel labelLeft" id="pdfLabel">
                             <button class="btn btn-dark" type="button" id="pdf">inscrits.pdf</button>
                         </div>
+                        <div class="eventLabel labelAdmin" id="">
+                            <form method="POST" action="{{route('maskedEvent', ['id' => $id_event])}}" onsubmit="return confirm('Signaler cet évènement ?')">
+                                @csrf
+                                <button class="btn btn-danger" type="submit" id="pdf">Signaler l'évènement</button>
+                            </form>
+                        </div>
                     @endif
-                    <div class="eventLabel labelRight" id="subscribe">                            
+                    <div class="eventLabel labelRight" id="subscribe">
                         @if($isRegister == null)
-                        <form method="POST" action="{{route('storeRegistration')}}">
-                            <button class="btn btn-success" name="event" value="{{$id_event}}" type="submit">S'inscrire</button>
+                            <form method="POST" action="{{route('storeRegistration')}}">
+                            <button class="btn btn-success" name="event" value="{{$id_event}}" type="submit">S'inscrire</button>                           
                         @else
-                        <form method="POST" action="{{route('destroyRegistration', ['id' => $id_event])}}">
-                            <button class="btn btn-danger" type="submit">Se désinscrire</button>
-                        @endif
+                            <form method="POST" action="{{route('destroyRegistration', ['id' => $id_event])}}">
+                            <button class="btn btn-danger" type="submit">Se désinscrire</button> 
+                        @endif 
                             @csrf
                         </form>
                     </div>
@@ -47,6 +68,8 @@
     </div>
 </div>
 @endsection
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Http\Controllers\RegistrationsController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ActivitiesController;
 
 class EventsController extends Controller
 {
@@ -50,7 +51,7 @@ class EventsController extends Controller
     {
         $event = Event::findOrFail($id);
         if($event != null) {
-            $isRegister = null;;
+            $isRegister = null;
             if(Auth::check()) {
                 $isRegister = RegistrationsController::show(Auth::user()->id, $id)->first();
             }
@@ -94,6 +95,13 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Event::destroy($id);
+        return redirect("evenements");
+    }
+
+    public function masked($id) {
+        $event = Event::findOrFail($id);
+        ActivitiesController::masked($event->id_activity);
+        return redirect("evenements");
     }
 }
