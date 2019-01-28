@@ -122,4 +122,6 @@ class ActivitiesController extends Controller
         $activity->masked=1;
         $activity->save();
     }
+
+
 }

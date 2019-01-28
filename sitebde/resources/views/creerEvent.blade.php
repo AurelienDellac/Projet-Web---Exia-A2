@@ -16,12 +16,10 @@
 
 <form method="POST" enctype="multipart/form-data" action="{{route("storeEvent")}}">
   @csrf
+    <div class="form-row" id ="event">
+            
+    </div>
     <div class="form-row">
-            <div class="form-group col-md-2">
-                    <label for="name"> Nom</label>
-                    <p type="text" class="form-control" id="name" name="name" >Nom
-                    </p>
-              </div>
       <div class="form-group col-md-2">
             <label for="fee"> Prix</label>
             <input type="text" class="form-control" id="fee" name="fee" placeholder = "Prix" >
@@ -32,7 +30,7 @@
       </div>
       <div class="col-md-2">
             <label for="category">Activité</label>
-            <select style="text-transform: capitalize" class="form-control" name="activity" id="activite" required autofocus>
+            <select style="text-transform: capitalize" class="form-control" name="activite" id="activite" required autofocus>
                     <option value="bambou">-- Choisir une activité --</option>
                     @foreach($activities as $activity)
                         <option value="{{$activity->id}}">{{$activity->title}}</option>
@@ -43,12 +41,6 @@
 
             </a>
     </div>
-    <div class="form-group col-md-8">
-            <label for="description"> Description</label>
-            <p type="description" class="form-control" id="description" name="description" > Description
-            </p>
-      </div>
-
     </div>
   
     

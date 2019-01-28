@@ -2,28 +2,35 @@
 $(document).change(function(){ 
     $val = $("#activite").val()
     console.log($("#activite").val());
-
+    getActivity($val);
+    
 });
 
 function getActivity($val){
+    var $acti = $('#event');
+    $acti.empty();
+
 
     $.ajax({
         type:'GET',
 
         url: "http://10.133.129.169:3000/activities/" + $val,
 
-        success: function(event) {
+        success: function(acti) {
 
-        $.each(event, function(i, activity){
-            $event.append(
-                "<a class='card link' href='product/" + product.id + " '>" +
-                    "<img class='card-img-top' src=" + 'images/' + product.img_src + " alt='Card image cap'>" +
-                    "<div class='card-body'>" + 
-                        "<h5 class='card-title'>" + product.label + "</h5>" +
-                        "<p class='card-description'>" + product.description + "</p>"+
-                        "<p class='card-text'>" + product.price + "€</p>"+
-                    "</div>"+
-                "</a>"); 
+        $.each(acti, function(i, activity){
+            $acti.append(
+                "<div class='form-group col-md-2'>" +
+                "<label for='name'> Nom</label>" +
+                "<p type='text' class='form-control' id='name' name='name' >" + activity.title +
+                "</p>" +
+                "</div>"+ 
+                "<div class='form-group col-md-12'>" +
+                "<label for='description'> Description</label>" +
+                "<p type='description' class='form-control' id='description' name='description' >" + activity.description +
+                "</p>" +
+                "</div>"); 
+                
         });
     }
     });
