@@ -50,10 +50,13 @@ class EventsController extends Controller
     {
         $event = Event::findOrFail($id);
         if($event != null) {
-            dd(RegistrationsController::show(Auth::user()->id, $id));
+            $isRegister = null;;
+            if(Auth::check()) {
+                $isRegister = RegistrationsController::show(Auth::user()->id, $id)->first();
+            }
             return view('evenement', [
                 "id_event" => $id, 
-                "isRegister" => RegistrationsController::show(Auth::user()->id, $id)
+                "isRegister" => $isRegister
             ]);
         } else {
             return redirect(404);

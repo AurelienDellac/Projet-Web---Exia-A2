@@ -3,11 +3,13 @@ $(function (){
     var fragmentedPath = path.split('/');
     var id = fragmentedPath[fragmentedPath.length-1];
     getEvents(id);
+    $('#pdf').click(function() {
+        getRegistrations(id);
+    });
 });
 
 function getEvents($id) {
     var $image = $('.eventImage');
-    // $evenements.empty();
     $.ajax({
         type:'GET',
         url: "http://10.133.129.169:3000/events/" + $id,
@@ -30,4 +32,8 @@ function getEvents($id) {
             
         }             
     });
+}
+
+function getRegistrations($id) {
+    window.open("http://10.133.129.169:3000/events/" + $id + "/registrations");
 }
