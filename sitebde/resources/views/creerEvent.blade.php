@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-2">
             <label for="category">Activité</label>
-            <select style="text-transform: capitalize" class="form-control" name="activity" id="activite" required autofocus>
+            <select style="text-transform: capitalize" class="form-control" name="activite" id="activite" required autofocus>
                     <option value="bambou">-- Choisir une activité --</option>
                     @foreach($activities as $activity)
                         <option value="{{$activity->id}}">{{$activity->title}}</option>

@@ -38,9 +38,26 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'fee' => 'String|required|max:50',
+            'date' => 'Date|required|max:500',
+        ]);
 
+        $image = $request->file('image');
+        $data = $request->all();
+
+        
+       
+            Event::create([
+                'fee' => $data['fee'],
+                'date' => $data['date'],
+                'id_activity' => $data['activite'],
+            ]);
+        
+        
+        return redirect("evenements");
+    }
+        
     /**
      * Display the specified resource.
      *
