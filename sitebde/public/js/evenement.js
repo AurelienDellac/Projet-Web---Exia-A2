@@ -40,7 +40,7 @@ function getMedias($id) {
     $('.mediaPanel').remove();
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/events/" + $id + "/medias",
+        url: "http://91.164.43.11:50000/events/" + $id + "/medias",
         success: function(medias) {
             $.each(medias, function(i, media){
                 $('.eventContainer').append(
