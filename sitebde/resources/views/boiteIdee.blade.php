@@ -10,7 +10,7 @@
     @endsection
 @section('content')
         <a href="/creerIdee" class="nav-link  oui">
-            <h2>Créez votre idée maintenant !</h2>
+            <button class="btn-dark btn-lg">Créez votre idée maintenant !</button>
 
             </a>
 <section id='ideas'>
