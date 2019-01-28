@@ -72,7 +72,16 @@ a.link:hover{
 	float: right !important;
 	width: 30%;
 }
+h5{
+	text-transform: capitalize;
+}
 
+.oui{
+	background-color: white;
+   text-align: left;
+	font-size: 23px; 
+	color: black;
+   }
 
 .eventsContainer {
 	display: flex;
