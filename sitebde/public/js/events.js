@@ -27,16 +27,16 @@ function getEvents($order) {
                 var months = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Decembre"];
 
                 $evenements.append(
-                    "<a class='card link' href='evenement/"+ evenement.id +" '>" + 
+                    "<a class='card link' id='cardContent href='evenement/" + evenement.id +" '>" + 
                         "<div id='cardContent'>"+
-                            "<img class='card-img column left' src=" + 'images/events/' + evenement.img_src +" alt='Card image cap'>" +
+                            "<img class='card-img column left' src=" + 'images/' + evenement.img_src +" alt='Card image cap'>" +
                             "<div class='card-body column center'>"+  
                                 "<h5 class='card-title'>" + evenement.title + "</h5>"+
                                 "<p class='card-description'>" + evenement.description + "</p>"+
                             "</div>"+
-                            "<div class='column right'>"+
-                                "<p class='card-text'>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
-                            
+                            "<div class='card-body column right'>"+
+                                "<h5 class='card-text'>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</h5>"+
+                            "</div>"+
                         "</div>"+
                     "</a>");      
             });
