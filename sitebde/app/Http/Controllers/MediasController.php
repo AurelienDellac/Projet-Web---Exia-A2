@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
-use App\Http\Controllers\RegistrationsController;
+use App\Models\Media;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\ActivitiesController;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\EventMail;
-use App\Models\User;
 
-class EventsController extends Controller
+use Illuminate\Support\Facades\Storage;
+
+class MediasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,7 +27,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view("creerEvent", ["activities"=>ActivitiesController::index()]);
+        //
     }
 
     /**
@@ -42,27 +39,22 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'fee' => 'String|required|max:50',
-            'date' => 'Date|required|max:500',
+            'image' => 'Image|max:1000|required',
         ]);
 
         $image = $request->file('image');
         $data = $request->all();
+        $image = $image->store('medias', 'images'); 
 
+        Media::create([
+            'id_event' => $data['event'],
+            'id_author' => Auth::user()->id,
+            'src' => $image
+        ]);
         
-       
-            Event::create([
-                'fee' => $data['fee'],
-                'date' => $data['date'],
-                'id_activity' => $data['activite'],
-            ]);
-        
-        
-        $user = User::findOrFail(ActivitiesController::show($data['activite'])->id_author);
-        Mail::to($user->email)->send(new EventMail(ActivitiesController::show($data['activite']->title)));
-        return redirect("evenements");
+        return redirect()->back();
     }
-        
+
     /**
      * Display the specified resource.
      *
@@ -71,19 +63,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        $event = Event::findOrFail($id);
-        if($event != null) {
-            $isRegister = null;
-            if(Auth::check()) {
-                $isRegister = RegistrationsController::show(Auth::user()->id, $id)->first();
-            }
-            return view('evenement', [
-                "id_event" => $id, 
-                "isRegister" => $isRegister
-            ]);
-        } else {
-            return redirect(404);
-        }
+        //
     }
 
     /**
@@ -117,13 +97,6 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        Event::destroy($id);
-        return redirect("evenements");
-    }
-
-    public function masked($id) {
-        $event = Event::findOrFail($id);
-        ActivitiesController::masked($event->id_activity);
-        return redirect("evenements");
+        //
     }
 }

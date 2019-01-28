@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Like;
+use App\Models\Like;
+use Illuminate\Support\Facades\Auth;
 
 class LikesController extends Controller
 {
@@ -36,11 +37,13 @@ class LikesController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        dd(Vote::firstOrCreate(
-            ['id_activity' => $data['idee'],
+        $i = Like::firstOrCreate(
+            ['id_media' => $data['media'],
             'id_user' => Auth::user()->id]
-        ));
-        
+        );
+        if(!$i->wasRecentlyCreated){
+           $this->destroy($data['media']);
+        }
         return redirect()->back();
     }
 
@@ -86,6 +89,9 @@ class LikesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $like = Like::where("id_user", Auth::user()->id)
+                                        ->where('id_media', $id);
+        $like->delete();
+        return \redirect()->back();
     }
 }
