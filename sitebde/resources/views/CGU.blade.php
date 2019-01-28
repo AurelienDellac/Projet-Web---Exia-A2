@@ -142,7 +142,7 @@
         <p> La livraison des produit peut donner lieux a un délais de 50 jours ouvrés. 
             La dite livraison ne peut avoir qu'au centre du CESI Bordeaux au 264 boulevard
             Godard. Les prix sont indiqués en euros TTC. Le paiement peut être réalisé par chèque, 
-            carte bancaire, en liquide ou par paypale.
+            carte bancaire, en liquide ou par Paypal.
         </p>
         <p> Sur le site, sont vendus des mugs, des pulls, des places pour des évènements, des tiquets
             de tombolas, et d'autre produits mis en vente par le BDE. L'ensemble de ces produits ne 

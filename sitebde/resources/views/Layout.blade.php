@@ -29,8 +29,10 @@
                         Evenements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item myLink" href="/evenementsPassees">Evenements futurs</a>
-                            <a class="dropdown-item myLink" href="/evenementsFutur">Evenements passés</a>
+
+                            <a class="dropdown-item myLink" href="/evenements/future">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="/evenements/past">Evenements passés</a>
+
                             <a class="dropdown-item myLink" href="/boiteIdee">Boite à idée</a>
                         </div>
                     </li>
@@ -67,14 +69,14 @@
                 <h3> CONTACT / INFORMATION </h3>
                     <a href="mailto:communication@bdecesibordeaux.fr" class="nav-link myLink"> communication@bdecesibordeaux.fr </a>
                     <a href="/CGU" class="nav-link myLink"> CGU </a>
-                    <a href="" class="nav-link myLink"> Mentions légales </a>
+                    <a href="/mentionsLegales" class="nav-link myLink"> Mentions légales </a>
             </div>
             <div class="whiteBar"></div>
             <div id="sitemap">
             <div id="event" class="colonne">
                 <h3> ÉVÈNEMENTIEL </h3>
-                    <a href="/evenements" class="nav-link myLink">Programme</a>
-                    <a href="" class="nav-link myLink">Évènements passés</a>
+                    <a href="/evenements/future" class="nav-link myLink">Programme</a>
+                    <a href="/evenements/past" class="nav-link myLink">Évènements passés</a>
                     <a href="/boiteIdee" class="nav-link myLink">Boîte a idée</a>
             </div>
 
