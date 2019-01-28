@@ -40,10 +40,12 @@ a.link:hover{
 	margin : 20px;
 }
 
-.eventPanel .card {
+ .card {
 	width:70%;
 	height:250px;
 	margin: 20px;
+	display: flex ;
+	flex-direction: row !important;
 }
 
 .eventPanel .card .card-img {
@@ -59,8 +61,12 @@ a.link:hover{
 	width: 40% !important;
 }
 
+.center{
+	flex-grow: 3;
+}
+
 .right{
-	width: 50%;
+	float: right !important;
 }
 
 
