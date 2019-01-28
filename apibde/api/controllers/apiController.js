@@ -135,3 +135,23 @@ exports.read_order = function(req, res) {
     }
   });
 };
+
+exports.list_sales = function(req, res) {
+  Product.getSales(function(err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(data);
+    }
+  });
+};
+
+exports.read_activity = function(req, res) {
+  Event.getActivity(req.params.id, function(err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(data);
+    }
+  });
+};
