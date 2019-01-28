@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Center;
+use App\Models\Registration;
+use Illuminate\Support\Facades\Auth;
 
-class CenterController extends Controller
+class RegistrationsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    static public function index()
+    public function index()
     {
-        return Center::all();
+        //
     }
 
     /**
@@ -35,7 +36,18 @@ class CenterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'event' => 'Numeric|required',
+        ]);
+
+        $data = $request->all();
+
+        Registration::firstOrCreate(
+            ["id_user" => Auth::user()->id],
+            ["id_event" => $data["event"]]
+        );
+
+        return \redirect()->back();
     }
 
     /**
@@ -44,9 +56,10 @@ class CenterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    static public function show($id_user, $id_event)
     {
-        return Center::findOrFail($id);
+        return Registration::where("id_user", $id_user)
+                            ->where('id_event', $id_event);
     }
 
     /**
@@ -80,6 +93,11 @@ class CenterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id);
+        $registration = Registration::where("id_user", Auth::user()->id)
+                                        ->where('id_event', $id);
+        $registration->delete();
+        $registration->save();
+        return \redirect()->back();
     }
 }

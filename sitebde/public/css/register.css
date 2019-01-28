@@ -1,12 +1,12 @@
 .card-header {
-    background-color: rgb(59, 89, 152)!important;
+    background-color: #5D89DA!important;
     border-radius: 0px!important;
     color : #fff!important;
 }
 
 .card {
     margin: 10px;
-    border-color: rgb(59, 89, 152)!important;
+    border-color: #5D89DA!important;
     border-width: 2px!important;
     border-radius: 5px!important;
     background-color: rgba(255,255,255,0)!important;
@@ -19,31 +19,31 @@
 }
 
 .card button {
-    background-color: rgb(59, 89, 152);
-    border-color: rgb(59, 89, 152);
+    background-color: #5D89DA;
+    border-color: #5D89DA;
     color : #fff;
     box-shadow: none!important;
 }
 
 .card button:hover {
     background-color: #fff;
-    border-color: rgb(59, 89, 152);
-    color : rgb(59, 89, 152);
+    border-color: #5D89DA;
+    color : #5D89DA;
 }
 
 .card button:active {
     box-shadow: none!important;
-    background-color: rgb(59, 89, 152)!important;
+    background-color: #5D89DA!important;
     color : #fff;
-    border-color : rgb(59, 89, 152)!important;
+    border-color : #5D89DA!important;
 }
 
 .card .form-control:focus { 
-    border-color: rgb(59, 89, 152);
-    box-shadow: 0 0 8px rgb(59, 89, 152);
+    border-color: #5D89DA;
+    box-shadow: 0 0 8px #5D89DA;
 }
 .btn-link {
-    color : rgb(59, 89, 152)!important;
+    color : #5D89DA!important;
 }
 
 div .panel {

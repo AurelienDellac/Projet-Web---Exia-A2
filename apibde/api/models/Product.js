@@ -62,12 +62,32 @@ Product.getProductsByCategory = function getProductsByCategory(category, result)
 };
 
 Product.getBasketByUser = function getBasketByUser(id, result) {
-    sql.query(`SELECT products.id AS id, label, img_src, price, quantity, 
+    sql.query(`SELECT orders.id AS id, products.id AS id_product, label, img_src, price, quantity, 
                 (quantity * price) AS total, JSON_OBJECT("id", users.id, "name", name, "forename", forename) AS user
                FROM orders
                INNER JOIN products ON products.id=orders.id_product
                INNER JOIN users ON users.id=orders.id_user 
                WHERE id_user = ? AND date IS null`, id, function (err, res) {                 
+            if(err) {
+                console.log("error: ", err);
+                result(err, null);
+            }
+            else{
+                res.forEach(element => {
+                    element.user = JSON.parse(element.user);
+                });
+                result(null, res);
+            }
+        });
+};
+
+Product.getOrder = function getOrder(id, date, result) {
+    sql.query(`SELECT orders.id AS id, products.id AS id_product, label, img_src, price, quantity, 
+                (quantity * price) AS total, JSON_OBJECT("id", users.id, "name", name, "forename", forename) AS user
+               FROM orders
+               INNER JOIN products ON products.id=orders.id_product
+               INNER JOIN users ON users.id=orders.id_user 
+               WHERE id_user = ? AND date = ?`, [id, date], function (err, res) {                 
             if(err) {
                 console.log("error: ", err);
                 result(err, null);

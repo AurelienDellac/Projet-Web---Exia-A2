@@ -21,3 +21,16 @@ nav img {
     color: white;
     margin-right: 0%;
 }
+
+.navbar .dropdown-menu {
+    background-color: #000!important;
+    color : #fff!important;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color : #fff!important;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #5D89DA!important;
+}

@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
@@ -39,9 +40,9 @@
 
                     </li>
                 </ul>
-                @if($id != "")
-                    <a class="nav-link myLink" href='#'><i class="fas fa-shopping-basket fa-2x"></i></a>
-                    <a class="nav-link myLink" id="logout" href='{{route('register')}}'>{{$fullname = $id->forename . "   " . $id->name}}<i class="fas fa-user-circle fa-3x"></i></a>
+                @if($user != null)
+                    <a class="nav-link myLink" id="basket" href='{{route("showBasket")}}'><i class="fas fa-shopping-basket fa-2x idUser" id="{{$user->id}}"></i></a>
+                    <a class="nav-link myLink" id="logout" href='{{route('register')}}'>{{$fullname = $user->forename . "   " . $user->name}}<i class="fas fa-user-circle fa-3x"></i></a>
                 @else
                 <a class="nav-link myLink" href='{{route('register')}}'><i class="fas fa-user-circle fa-3x"></i></a>
                 @endif
@@ -103,11 +104,11 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    {{HTML::script("js/basketHeader.js")}}
 </body>
 
 </html>

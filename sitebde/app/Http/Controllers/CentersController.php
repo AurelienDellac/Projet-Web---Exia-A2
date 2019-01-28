@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Center;
 
-class ProductController extends Controller
+class CentersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    static public function index()
     {
+        return Center::all();
     }
 
     /**
@@ -44,7 +46,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('product');
+        return Center::findOrFail($id);
     }
 
     /**

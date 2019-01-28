@@ -34,4 +34,7 @@ module.exports = function(app) {
   
   app.route('/basket/:id')
     .get(api.read_basket);
+
+    app.route('/basket/:id/:date')
+    .get(api.read_order);
 };

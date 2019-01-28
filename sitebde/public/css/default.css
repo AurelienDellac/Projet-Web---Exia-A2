@@ -9,8 +9,7 @@ body {
     flex-direction: column;
 }
 
-header,
-footer {
+header, footer {
     flex: none;
 }
 
@@ -52,6 +51,10 @@ main {
     background-color: white;
 }
 
+#logout, #basket {
+    padding-left: 0px!important;
+}
+
 .myLink i {
     color: #fff;
     margin-left : 10px;
@@ -63,7 +66,7 @@ main {
 }
 
 .icon:hover{
-    background-color: rgb(59, 89, 152) !important;
+    background-color: #5D89DA !important;
 }
 
 #logoCesi{
@@ -79,7 +82,7 @@ main {
 }
 
 .button img:hover{
-    background-color: rgb(59, 89, 152) !important;
+    background-color: #5D89DA !important;
 }
 
 .myLink:link, h3
@@ -94,7 +97,7 @@ main {
 }
 .myLink:hover, .myLink:hover > i 
 {
-    color: rgb(59, 89, 152) !important;
+    color: #5D89DA !important;
     text-decoration: none;
 }
 
@@ -136,8 +139,9 @@ main {
 #sitemap {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 #event {
@@ -164,7 +168,7 @@ main {
 }
 
 #network a:hover{
-    color: rgb(59, 89, 152);
+    color: #5D89DA;
 }
 
 @media screen and (max-width: 1000px) {

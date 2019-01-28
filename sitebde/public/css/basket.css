@@ -1,0 +1,106 @@
+.basketContainer {
+    width:100%;
+    height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top : 100px;
+    padding-bottom : 100px;
+    flex-direction: column;
+}
+
+.basketPanel {
+    background-color: rgba(255,255,255,0);
+    width:80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid;
+    border-color: #5D89DA;
+}
+
+.basketHead {
+    background-color: #d8d8d8;
+    height:100px;
+    width: 100%;
+    padding:10px;
+}
+
+.basketBody {
+    background-color: rgba(255,255,255,0.4);
+    height:fit-content;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.basketTotal {
+    background-color: #fff;
+    height:50px;
+    width: fit-content;
+    padding:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+.basketItem {
+    height : fit-content;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    padding : 10px;
+    flex-wrap: wrap;
+}
+
+.basketLabel {
+    flex:1;
+    min-width: fit-content;
+    height:100%;
+    background-color: #fff;
+    border : 1px solid #5D89DA;
+    margin:10px;
+    padding:3px;
+}
+
+.basketPanel a {
+    color:#000;
+    width: 100%;
+}
+
+.basketPanel a:hover {
+    text-decoration: none;
+    color:#000;
+}
+
+.basketItem:hover {
+    background-color: #5D89DA; 
+}
+
+.basketTotal .basketLabel {
+    border:none;
+}
+
+.validate {
+    margin:20px;
+    margin-left: 70%;
+}
+
+.basketItem form {
+    height:100%;
+    margin:10px;
+}
