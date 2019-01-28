@@ -11,30 +11,30 @@
 @endsection
 
 @section('content')
+<div id="welcome">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000" data-wrap="true">
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-wrap="true">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ul>
-  
-  <!-- The slideshow -->
-  <div class="carousel-inner" >
-    <div class="iner-element" id="contenue"></div>
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ul>
+    
+    <!-- The slideshow -->
+    <div class="carousel-inner" >
+      <div class="iner-element" id="contenue"></div>
+    </div>
+    
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
   </div>
-  
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
 </div>
-
 
 @endsection
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
