@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Order;
+use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Ordered;
 
-class OrdersController extends Controller
+class RegistrationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return view("basket");
+        //
     }
 
     /**
@@ -39,29 +37,16 @@ class OrdersController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'quantity' => 'Numeric|nullable',
-            'submit' => 'Numeric|required',
+            'event' => 'Numeric|required',
         ]);
 
         $data = $request->all();
-        $existingOrder = Order::where("id_product",  $data['submit'])
-                                ->where("id_user", Auth::user()->id)
-                                ->where("date", null)->first();
 
-        if($data["quantity"] == null) {
-            $data["quantity"] = 1;
-        }
+        Registration::firstOrCreate(
+            ["id_user" => Auth::user()->id],
+            ["id_event" => $data["event"]]
+        );
 
-        if($existingOrder == null) {
-            Order::create([
-                'quantity' => $data['quantity'],
-                'id_product' => $data['submit'],
-                'id_user' => Auth::user()->id,
-            ]);
-        } else {
-            $this->updateQuantity($data['quantity'], $existingOrder->id);
-        }
-        
         return \redirect()->back();
     }
 
@@ -71,9 +56,10 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $date)
+    static public function show($id_user, $id_event)
     {
-        return view('userBasket');
+        return Registration::where("id_user", $id_user)
+                            ->where('id_event', $id_event);
     }
 
     /**
@@ -96,15 +82,7 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-    }
-
-    public function updateQuantity($quantity, $id)
-    {
-        $order = Order::findOrFail($id);
-
-        $order->quantity = $order->quantity + $quantity;
-        $order->save();
+        //
     }
 
     /**
@@ -115,13 +93,11 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        Order::destroy($id);
-        return redirect()->route("showBasket");
-    }
-
-    public function confirm() {
-        $orders = Order::where("id_user", Auth::user()->id)->where("date", null)->update(['date' => now()]);
-        Mail::to("aurelien.dellac@gmail.com")->send(new Ordered(Auth::user(), now()));
-        return redirect("boutique");
+        dd($id);
+        $registration = Registration::where("id_user", Auth::user()->id)
+                                        ->where('id_event', $id);
+        $registration->delete();
+        $registration->save();
+        return \redirect()->back();
     }
 }

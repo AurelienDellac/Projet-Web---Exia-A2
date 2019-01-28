@@ -41,7 +41,7 @@
                     </li>
                 </ul>
                 @if($user != null)
-                    <a class="nav-link myLink" href='#'><i class="fas fa-shopping-basket fa-2x"></i></a>
+                    <a class="nav-link myLink" id="basket" href='{{route("showBasket")}}'><i class="fas fa-shopping-basket fa-2x idUser" id="{{$user->id}}"></i></a>
                     <a class="nav-link myLink" id="logout" href='{{route('register')}}'>{{$fullname = $user->forename . "   " . $user->name}}<i class="fas fa-user-circle fa-3x"></i></a>
                 @else
                 <a class="nav-link myLink" href='{{route('register')}}'><i class="fas fa-user-circle fa-3x"></i></a>
@@ -108,6 +108,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script> 
+    {{HTML::script("js/basketHeader.js")}}
 </body>
 
 </html>

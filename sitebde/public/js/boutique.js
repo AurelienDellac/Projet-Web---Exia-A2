@@ -29,7 +29,7 @@ function getProducts($cat, $order) {
     $.ajax({
         type:'GET',
 
-        url: "http://91.164.43.11:50000/products/" + $cat,
+        url: "http://10.133.129.169:3000/products/" + $cat,
       
         success: function(products) {
 
@@ -59,7 +59,6 @@ function getProducts($cat, $order) {
 }
 
 function setCategory($cat) {
-    console.log(':radio[name=cat][value="' + $cat +'"]');
     let box = ':radio[name=cat][value="' + $cat +'"]';
     $('#formCategory').find(box).prop('checked', true);
 }
@@ -68,7 +67,7 @@ function setAutoComplete() {
     $.ajax({
         type:'GET',
 
-        url: "http://91.164.43.11:50000/products/",
+        url: "http://10.133.129.169:3000/products/",
 
         success: function(products) {
             
@@ -76,7 +75,6 @@ function setAutoComplete() {
             $.each(products, function(i, product){
                 productList.push({"label" : product.label, "value" : product.id});
             });
-            console.log(products);
             $("#search").autocomplete({
                 source : productList,
 

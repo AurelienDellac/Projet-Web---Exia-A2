@@ -51,6 +51,10 @@ main {
     background-color: white;
 }
 
+#logout, #basket {
+    padding-left: 0px!important;
+}
+
 .myLink i {
     color: #fff;
     margin-left : 10px;

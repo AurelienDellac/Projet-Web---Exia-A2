@@ -125,3 +125,13 @@ exports.read_basket = function(req, res) {
     }
   });
 };
+
+exports.read_order = function(req, res) {
+  Product.getOrder(req.params.id, req.params.date, function(err, data) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(data);
+    }
+  });
+};
