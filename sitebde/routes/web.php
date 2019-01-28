@@ -46,6 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/desinscription/{id}', 'RegistrationsController@destroy')->name('destroyRegistration');
 });
 
+Route::group(['middleware' => 'salarie'], function () {
+    Route::post('/masquerEvenement/{id}', 'EventsController@masked')->name('maskedEvent');
+});
+
 Route::group(['middleware' => 'member'], function () {
     Route::get('/addProduct', 'ProductsController@create')->name('addProduct');
     Route::post('/addProduct', 'ProductsController@store')->name('storeProduct');
@@ -55,11 +59,8 @@ Route::group(['middleware' => 'member'], function () {
     Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
     Route::post('/creerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
     Route::get('/panier/{id}/{date}', 'OrdersController@show')->name('showUserBasket');
+    Route::post('/supprimerEvenement/{id}', 'EventsController@destroy')->name('destroyEvent');
     Route::post('/creerEvent', 'EventsController@store')->name('storeEvent');
     Route::get('/creerEvent', 'EventsController@create')->name('showcreateEvent');
-
- 
-
-
 });
 

@@ -51,7 +51,7 @@ class EventsController extends Controller
     {
         $event = Event::findOrFail($id);
         if($event != null) {
-            $isRegister = null;;
+            $isRegister = null;
             if(Auth::check()) {
                 $isRegister = RegistrationsController::show(Auth::user()->id, $id)->first();
             }
@@ -95,6 +95,13 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Event::destroy($id);
+        return redirect("evenements");
+    }
+
+    public function masked($id) {
+        $event = Event::findOrFail($id);
+        ActivitiesController::masked($event->id_activity);
+        return redirect("evenements");
     }
 }
