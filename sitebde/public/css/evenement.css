@@ -67,33 +67,28 @@
     align-items: center;
     padding : 5px;
     flex-wrap: wrap;
-    border:1px solid #000;
+    /* border:1px solid #000; */
 }
 
 .eventLabel {
     flex:1;
     min-width: fit-content;
     height:100%;
-    border : 1px solid #5D89DA;
+    /* border : 1px solid #5D89DA; */
 }
 
-#titleEvent {
+.labelLeft {
     text-align: left;
     text-transform: capitalize;
 }
 
-#dateEvent {
+.labelRight {
     text-align: right;
-}
-
-#decriptionEvent {
-    text-transform: capitalize;
 }
 
 #priceEvent {
     font-size: 50;
     font-weight: bold;
-    text-align: right;
 }
 
 .eventPanel a {
