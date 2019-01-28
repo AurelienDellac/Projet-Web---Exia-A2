@@ -29,7 +29,7 @@ function getProducts($cat, $order) {
     $.ajax({
         type:'GET',
 
-        url: "http://91.164.43.11:50000/products/" + $cat,
+        url: "http://10.133.129.169:3000/products/" + $cat,
       
         success: function(products) {
 
@@ -65,7 +65,7 @@ function setAutoComplete() {
     $.ajax({
         type:'GET',
 
-        url: "http://91.164.43.11:50000/products/",
+        url: "http://10.133.129.169:3000/products/",
 
         success: function(products) {
             
