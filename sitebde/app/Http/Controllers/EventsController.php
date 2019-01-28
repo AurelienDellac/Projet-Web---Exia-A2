@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Http\Controllers\RegistrationsController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ActivitiesController;
 
 class EventsController extends Controller
 {
@@ -26,7 +27,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view("creerEvent", ["activities"=>ActivitiesController::index()]);
     }
 
     /**

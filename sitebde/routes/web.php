@@ -26,6 +26,7 @@ Route::get("/evenement/{id}", 'EventsController@show')->name('showEvent');
 Route::view('/boiteIdee', 'boiteIdee');
 Route::get('/evenements/{time}', function ($time) {
     return redirect('/evenements?periode=' . $time);
+});
 
 
 Auth::routes();
@@ -54,5 +55,11 @@ Route::group(['middleware' => 'member'], function () {
     Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
     Route::post('/creerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
     Route::get('/panier/{id}/{date}', 'OrdersController@show')->name('showUserBasket');
+    Route::post('/creerEvent', 'EventsController@store')->name('storeEvent');
+    Route::get('/creerEvent', 'EventsController@create')->name('showcreateEvent');
+
+ 
+
+
 });
 
