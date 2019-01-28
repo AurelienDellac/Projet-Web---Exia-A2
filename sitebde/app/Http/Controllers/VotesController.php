@@ -35,18 +35,14 @@ class VotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'id' => 'Numeric|required|exists:activities,id',
-        ]);
-        
+    {        
         $data = $request->all();
-        Vote::create([
-            'id_activity' => $data['label'],
-            'id_user' => Auth::user()->id,
-        ]);
+        Vote::firstOrCreate(
+            ['id_activity' => $data['idee'],
+            'id_user' => Auth::user()->id]
+        );
         
-        return redirect("boiteIdee");
+        return redirect()->back();
     }
 
     static public function initialStore($id_activity)
@@ -65,9 +61,10 @@ class VotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_user, $id_activity)
     {
-        //
+        return Vote::where("id_user", $id_user)
+                            ->where('id_activity', $id_activity);
     }
 
     /**
@@ -101,6 +98,9 @@ class VotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vote = Vote::where("id_user", Auth::user()->id)
+                                        ->where('id_activity', $id);
+        $vote->delete();
+        return \redirect()->back();
     }
 }
