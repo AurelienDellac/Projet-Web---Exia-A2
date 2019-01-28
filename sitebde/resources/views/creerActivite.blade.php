@@ -11,9 +11,7 @@
 
 @section('content')
 
-
-
-<form method="POST" enctype="multipart/form-data" action="{{route("storeActivity")}}">
+<form method="POST" enctype="multipart/form-data" action="{{route('storeActivity')}}">
   @csrf
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -26,16 +24,15 @@
       <input type="text" class="form-control" id="description" name="description" placeholder="Description">
     </div>
     <a>Choisir une image</a>
-
-    <div class="form-row">
-
-  <input type="file"
-         id="image" name="image"
-         accept="image/png, image/jpeg">
-    </div>
     
-    <button type="submit" class="btn btn-primary">Créer</button>
-  </form>
+    <div class="form-row">
+  <input type="file"
+        id="image" name="image"
+        accept="image/png, image/jpeg">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Créer</button>
+</form>
 
 
 @endsection
