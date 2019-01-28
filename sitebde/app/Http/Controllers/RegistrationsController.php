@@ -93,11 +93,9 @@ class RegistrationsController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
         $registration = Registration::where("id_user", Auth::user()->id)
                                         ->where('id_event', $id);
         $registration->delete();
-        $registration->save();
         return \redirect()->back();
     }
 }

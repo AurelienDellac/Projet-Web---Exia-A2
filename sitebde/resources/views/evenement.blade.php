@@ -15,26 +15,29 @@
             </div>
             <div class="eventBody">
                 <div class="eventItem">
-                    <div class="eventLabel" id="titleEvent"></div>
-                    <div class="eventLabel" id="dateEvent"></div>
+                    <div class="eventLabel labelLeft" id="titleEvent"></div>
+                    <div class="eventLabel labelRight" id="dateEvent"></div>
                 </div>
                 <div class="eventItem">
-                    <div class="eventLabel" id="descriptionEvent"></div>
+                    <div class="eventLabel labelLeft" id="descriptionEvent"></div>
                 </div>
                 <div class="eventItem">
-                    <div class="eventLabel" id="priceEvent"></div>
+                    <div class="eventLabel labelRight" id="priceEvent"></div>
                 </div>
                 <div class="eventItem">
-                    <div class="eventLabel" id="subscribe">
+                    @if($user != null && $user->id_role == 2)
+                        <div class="eventLabel labelLeft" id="pdfLabel">
+                            <button class="btn btn-dark" type="button" id="pdf">inscrits.pdf</button>
+                        </div>
+                    @endif
+                    <div class="eventLabel labelRight" id="subscribe">                            
+                        @if($isRegister == null)
                         <form method="POST" action="{{route('storeRegistration')}}">
-                            
-                            @if($isRegister == null)
-                            <form method="POST" action="{{route('storeRegistration')}}">
-                                <button class="btn btn-success" name="event" value="{{$id_event}}" type="submit">S'inscrire</button>
-                            @else
-                            <form method="POST" action="{{route('destroyRegistration', ['id' => $id_event])}}">
-                                <button class="btn btn-danger" type="submit">Se désinscrire</button>
-                            @endif
+                            <button class="btn btn-success" name="event" value="{{$id_event}}" type="submit">S'inscrire</button>
+                        @else
+                        <form method="POST" action="{{route('destroyRegistration', ['id' => $id_event])}}">
+                            <button class="btn btn-danger" type="submit">Se désinscrire</button>
+                        @endif
                             @csrf
                         </form>
                     </div>
