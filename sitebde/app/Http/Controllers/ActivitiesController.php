@@ -72,7 +72,12 @@ class ActivitiesController extends Controller
      */
     static public function show($id)
     {
-        return Activity::where('id_author', $id)->orderBy('id', 'desc')->first();
+        return Activity::findOrFail($id);
+    }
+
+    static public function showLastUserIdea($id_author)
+    {
+        return Activity::where('id_author', $id_author)->orderBy('id', 'desc')->first();
     }
 
     /**
@@ -110,5 +115,11 @@ class ActivitiesController extends Controller
         Storage::disk('images')->delete($file);
         Activity::destroy($id);
         return redirect("welcome");
+    }
+
+    static public function masked($id) {
+        $activity = Activity::findOrFail($id);
+        $activity->masked=1;
+        $activity->save();
     }
 }

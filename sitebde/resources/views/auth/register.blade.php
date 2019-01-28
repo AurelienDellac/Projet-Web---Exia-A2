@@ -20,7 +20,7 @@
 
                     <div class="col-lg-12  col-xl-6">
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}"
-                            required autofocus> @if ($errors->has('email'))
+                            required > @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('email') }}</strong>
                                             </span> @endif
@@ -76,7 +76,7 @@
 
                     <div class="col-lg-12  col-xl-6">
                         <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}"
-                            required autofocus> @if ($errors->has('name'))
+                            required > @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span> @endif
@@ -88,7 +88,7 @@
 
                     <div class="col-lg-12  col-xl-6">
                         <input id="forename" type="text" class="form-control{{ $errors->has('forename') ? ' is-invalid' : '' }}" name="forename"
-                            value="{{ old('forename') }}" required autofocus> @if ($errors->has('forename'))
+                            value="{{ old('forename') }}" required > @if ($errors->has('forename'))
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('forename') }}</strong>
                                     </span> @endif
@@ -132,7 +132,7 @@
 
                     <div class="col-lg-12  col-xl-6">
                         <select style="text-transform: capitalize" class="form-control{{ $errors->has('center') ? ' is-invalid' : '' }}" name="center"
-                            value="{{ old('center') }}" required autofocus>
+                            value="{{ old('center') }}" required>
                                     <option value="">-- Choisir son centre --</option>
                                     @foreach($centers as $center)
                                         <option value="{{$center->id}}">{{$center->name}}</option>

@@ -38,7 +38,7 @@ class IdeasController extends Controller
     public function store(Request $request)
     {
         ActivitiesController::store($request);
-        VotesController::initialStore(ActivitiesController::show(Auth::user()->id)->id);
+        VotesController::initialStore(ActivitiesController::showLastUserIdea(Auth::user()->id)->id);
         return redirect("boiteIdee");
     }
 
