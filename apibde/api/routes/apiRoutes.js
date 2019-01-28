@@ -25,6 +25,9 @@ module.exports = function(app) {
   
   app.route('/products')
     .get(api.list_all_products);
+  
+  app.route('/products/sales')
+    .get(api.list_sales);
 
   app.route('/products/:id')
     .get(api.read_a_product);
@@ -35,6 +38,10 @@ module.exports = function(app) {
   app.route('/basket/:id')
     .get(api.read_basket);
 
-    app.route('/basket/:id/:date')
+  app.route('/basket/:id/:date')
     .get(api.read_order);
+
+  app.route('/activities/:id')
+    .get(api.read_activity);
+
 };
