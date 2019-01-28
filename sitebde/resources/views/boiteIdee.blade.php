@@ -8,9 +8,10 @@
     @section('title')
         <h1>Boite à idée</h1>
     @endsection
-    @section('content')
-    <a href="/creerIdee" class="nav-link  oui">
-        <h2>Créez votre idée maintenant !</h2>
+
+@section('content')
+        <a href="/creerIdee" class="nav-link  oui">
+            <button class="btn-dark btn-lg">Créez votre idée maintenant !</button>
 
         </a>
             @csrf

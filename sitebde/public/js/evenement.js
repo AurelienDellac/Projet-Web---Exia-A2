@@ -18,15 +18,17 @@ function getEvents($id) {
         success: function(evenement) {
             evenement = evenement[0];
             var date = new Date(evenement.date);            
-            $('.eventImage').prop("src", "/images/" + evenement.img_src);
+            $('#eventImage').prop("src", "/images/" + evenement.img_src);
             $('#titleEvent').html("<h2>" + evenement.title + "</h2>");
             $('#dateEvent').html("<h2>" + days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()] + "</h2>");
             $('#descriptionEvent').html(evenement.description);
+            $('#contactEvent').html("Responsable : <a href='mailto:communication@bdecesibordeaux.fr'>" + evenement.author.mail + "</a>");
             if (evenement.fee == null) {
                 $('#priceEvent').html("GRATUIT");
             } else {
                 $('#priceEvent').html(evenement.fee + "€");
             }
+            $('.mediaPhoto').prop("src", "/images/" + evenement.img_src);
             
         }             
     });

@@ -29,7 +29,7 @@
     overflow: hidden;
 }
 
-.eventImage {
+#eventImage {
     width:100%;
     min-height: 250px;
 }
@@ -79,11 +79,24 @@
 
 .labelLeft {
     text-align: left;
-    text-transform: capitalize;
+}
+
+.labelLeft::first-letter {
+    text-transform: uppercase;
 }
 
 .labelRight {
     text-align: right;
+}
+
+.labelLeft a {
+    color:black!important;
+    text-transform: none;
+}
+
+.labelLeft a:hover {
+    color:#5D89DA!important;
+    text-decoration: none;
 }
 
 #priceEvent {
@@ -113,4 +126,93 @@
 .eventItem form {
     height:100%;
     margin:10px;
+}
+
+.mediaPanel {
+    background-color: rgba(255,255,255,0.4);
+    width:fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid;
+    border-color: #5D89DA;
+    margin-top: 20px;
+}
+
+.mediaPhotoPanel {
+    height:fit-content;
+    min-width: fit-content;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding : 5px;
+}
+
+.mediaPhoto {
+    width:100%;
+    height: auto;
+    z-index: 1;
+}
+
+.mediaLike {
+    background-color: #fff;
+    border-radius : 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:fit-content;
+    height: fit-content;
+    position: absolute;
+    /* left: 0px; */
+    bottom: 0;
+    z-index: 2;
+}
+
+.mediaCredit {
+    height:fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding:5px;
+}
+
+.mediaPost {
+    width:100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top:10px;
+    margin-bottom: 10px;
+    background-color: red;
+}
+
+.mediaComment {
+    background-color: #fff;
+    border-radius: 5px;
+    height: fit-content;
+    width : 70%;
+    padding : 10px;
+}
+
+.commentHead {
+    /* border : 1px solid #000;  */
+    background-color: #739ae2;
+    border-radius: 5px;
+    padding : 3px;
+    padding-left : 5px;
+    
+    margin-bottom : 10px;
+}
+
+.commentContent {
+    /* border : 1px solid #000; */
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    padding : 5px;
+    margin-left : 10px;
 }
