@@ -13,7 +13,7 @@ class ActivitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public static function index()
     {
         return Activity::all();
     }

@@ -28,7 +28,16 @@
             </div>
             <button id="sort" class ='button' type="button">Filtrer</button>
         </form>
-    </aside>
+        
+
+    @if($user != null && $user->id_role == 2) 
+    <a href="{{route("showcreateEvent")}}" class="nav-link  oui">
+            Créez votre évènement.
+
+            </a>               
+    @else
+    @endif
+</aside>    
     <div class="eventPanel" id="evenements"></div>
 </div>
 @endsection

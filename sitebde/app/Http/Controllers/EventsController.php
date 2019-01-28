@@ -27,7 +27,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
+        return view("creerEvent", ["activities"=>ActivitiesController::index()]);
     }
 
     /**
