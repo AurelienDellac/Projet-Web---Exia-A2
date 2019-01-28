@@ -26,7 +26,7 @@ Route::get("/evenement/{id}", 'EventsController@show')->name('showEvent');
 Route::view('/boiteIdee', 'boiteIdee');
 Route::get('/evenements/{time}', function ($time) {
     return redirect('/evenements?periode=' . $time);
-}
+});
 
 
 Auth::routes();
