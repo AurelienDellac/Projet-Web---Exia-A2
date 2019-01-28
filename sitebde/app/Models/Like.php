@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Like extends Model
 {
     public $timestamps = false;
+    protected $fillable = [
+        'id_media', 'id_user'
+    ];
 }

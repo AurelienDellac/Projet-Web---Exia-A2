@@ -115,7 +115,7 @@ Event.getMediasByEvent = function getMediasByEvent(id, result) {
 };
 
 Event.getIdeas = function getIdeas(result) {
-    sql.query(`SELECT title, description, img_src, COUNT(id_user) as votes 
+    sql.query(`SELECT activities.id as id, title, description, img_src, COUNT(id_user) as votes 
                FROM votes
                INNER JOIN activities ON votes.id_activity=activities.id
                WHERE masked IS null
