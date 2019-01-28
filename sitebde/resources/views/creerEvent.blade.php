@@ -17,11 +17,9 @@
 <form method="POST" enctype="multipart/form-data" action="{{route("storeEvent")}}">
   @csrf
     <div class="form-row" id ="event">
-            <div class="form-group col-md-2">
-                    <label for="name"> Nom</label>
-                    <p type="text" class="form-control" id="name" name="name" >Nom
-                    </p>
-              </div>
+            
+    </div>
+    <div class="form-row">
       <div class="form-group col-md-2">
             <label for="fee"> Prix</label>
             <input type="text" class="form-control" id="fee" name="fee" placeholder = "Prix" >
@@ -43,12 +41,6 @@
 
             </a>
     </div>
-    <div class="form-group col-md-8">
-            <label for="description"> Description</label>
-            <p type="description" class="form-control" id="description" name="description" > Description
-            </p>
-      </div>
-
     </div>
   
     
