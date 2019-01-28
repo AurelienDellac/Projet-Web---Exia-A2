@@ -22,7 +22,7 @@ function getEvents($order) {
     $evenements.empty();
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/events/" +$order,
+        url: "http://91.164.43.11:50000/events/" +$order,
         success: function(evenements) {
 
             $.each(evenements, function(i, evenement){

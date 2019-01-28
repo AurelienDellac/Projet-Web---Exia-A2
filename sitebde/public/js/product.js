@@ -14,7 +14,7 @@ function getProducts(t) {
     $.ajax({
         type:'GET',
 
-        url: "http://10.133.129.169:3000/products/" + t,
+        url: "http://91.164.43.11:50000/products/" + t,
 
         success: function(products) {
             product = products[0];

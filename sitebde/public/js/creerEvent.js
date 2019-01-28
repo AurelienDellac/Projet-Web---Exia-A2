@@ -14,7 +14,7 @@ function getActivity($val){
     $.ajax({
         type:'GET',
 
-        url: "http://10.133.129.169:3000/activities/" + $val,
+        url: "http://91.164.43.11:50000/activities/" + $val,
 
         success: function(acti) {
 
