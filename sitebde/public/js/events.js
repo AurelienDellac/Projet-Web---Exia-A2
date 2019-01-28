@@ -36,6 +36,8 @@ function getEvents($order) {
                                 "<h5 class='card-title'>" + evenement.title + "</h5>"+
                                 "<p class='card-description'>" + evenement.description + "</p>"+
                             "</div>"+
+                            "<div class='lib-header-seperator'>"+
+                            "</div>"+
                             "<div class='card-body column right'>"+
                                 "<h5 class='card-text'>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</h5>"+
                             "</div>"+
