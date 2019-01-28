@@ -58,7 +58,7 @@ Event.getAllFutureEvent = function getAllFutureEvent(result) {
 
 Event.getEventById = function getEventById(id, result) {
     sql.query(`SELECT events.id as id, title, description, 
-                    JSON_OBJECT("id", users.id, "name", name, "forename", forename) as author, date, fee, img_src 
+                    JSON_OBJECT("id", users.id, "name", name, "forename", forename, "mail", users.email) as author, date, fee, img_src 
                 FROM events
                 INNER JOIN activities ON events.id_activity=activities.id
                 INNER JOIN users ON activities.id_author=users.id
@@ -82,11 +82,11 @@ Event.getEventById = function getEventById(id, result) {
 Event.getMediasByEvent = function getMediasByEvent(id, result) {
     sql.query(`SELECT tmp.id, src, author, comments, COUNT(likes.id_media) as likes 
                 FROM (SELECT medias.id AS id, src, 
-                JSON_OBJECT("id", users.id, "name", users.name, "forename", users.forename) AS author,
+                JSON_OBJECT("id", users.id, "name", users.name, "forename", users.forename, "mail", users.email) AS author,
                 JSON_ARRAYAGG(
                     JSON_OBJECT(
                         "content", content, 
-                        "author", JSON_OBJECT("id", users2.id, "name", users2.name, "forename", users2.forename)
+                        "author", JSON_OBJECT("id", users2.id, "name", users2.name, "forename", users2.forename, "mail", users2.email)
                     )
                 ) AS comments
                FROM medias 
