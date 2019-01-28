@@ -12,33 +12,20 @@
 
 <div class="eventsContainer">
     <aside>
-        <form id='searchForm' action="#">
-        <p>Rechercher</p>
-            <input type="text"  id="search" name="search"  value="">
-        </form>
         <form id='formCategory' action="#">
-            <p>Catégories</p>
-            <input type="radio" id="choice1" name="cat" value="category/1">
-            <label for="choice1">Vetements</label><br>
-    
-            <input type="radio" id="choice2" name="cat"  value="category/2">
-            <label for="choice2">Accessoires</label> <br>
-    
-            <input type="radio" id="choice3" name="cat"  value="category/3">
-            <label for="choice3">Billets</label><br>
-            
-            <input type="radio"  name="cat"  value="">
-            <label for="catégorieChoix3">#nofilter</label><br>
-
-            <p>Prix</p>
-            <input type="radio" id="choice4" name="price" value="down">
-            <label for="choice1">Ordre croissant</label><br>
-    
-            <input type="radio" id="choice5" name="price"  value="up">
-            <label for="choice2">Ordre décroissant</label> <br>
-    
-            <input type="radio" id="choice6" name="price"  value="none">
-            <label for="choice3">#nofilter</label><br>
+            <h4>Évènements</h4>
+            <div>
+                <input type="radio" id="choice1" name="time" value="future">
+                <label for="choice1">Futurs</label>
+            </div>
+            <div>
+                <input type="radio" id="choice2" name="time"  value="past">
+                <label for="choice2">Passés</label> 
+            </div>
+            <div>
+                <input type="radio" id="choice3" name="time"  value="">
+                <label for="choice2">#NoFilter</label> 
+            </div>
             <button id="sort" class ='button' type="button">Filtrer</button>
         </form>
     </aside>

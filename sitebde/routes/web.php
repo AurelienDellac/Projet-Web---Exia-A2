@@ -21,7 +21,9 @@ Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::get('/product/{id}', 'ProductsController@show');
 Route::get("/evenement/{id}", 'EventsController@show')->name('showEvent');
-
+Route::get('/evenements/{time}', function ($time) {
+    return redirect('/evenements?periode=' . $time);
+ });
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
