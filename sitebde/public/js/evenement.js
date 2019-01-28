@@ -35,7 +35,6 @@ function getEvents($id) {
             } else {
                 $('#priceEvent').html(evenement.fee + "€");
             }
-            $('.mediaPhoto').prop("src", "/images/" + evenement.img_src);
         }             
     });
 }
