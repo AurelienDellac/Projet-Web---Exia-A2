@@ -101,4 +101,21 @@ Product.getOrder = function getOrder(id, date, result) {
         });
 };
 
+Product.getSales = function getSales(result) {
+    sql.query(`SELECT products.id AS id, label, img_src, price, COUNT(products.id) as sales
+               FROM orders
+               INNER JOIN products ON products.id=orders.id_product
+               GROUP BY products.id
+               ORDER BY sales DESC
+               LIMIT 3`, function (err, res) {                 
+            if(err) {
+                console.log("error: ", err);
+                result(err, null);
+            }
+            else{
+                result(null, res);
+            }
+        });
+};
+
 module.exports=Product;

@@ -148,4 +148,18 @@ Event.getRegistered = function getRegistered(id, result) {
         });   
 };
 
+Event.getActivity = function getActivity(id, result) {
+    sql.query(`SELECT id, title, description FROM activities
+                WHERE id = ?`, id,  function (err, res) {
+            if(err) {
+                console.log("error: ", err);
+                result(null, err);
+            }
+            else{
+             console.log('Events : ', res);  
+             result(null, res);
+            }
+        });   
+};
+
 module.exports=Event;
