@@ -16,7 +16,7 @@
 
 <form method="POST" enctype="multipart/form-data" action="{{route("storeEvent")}}">
   @csrf
-    <div class="form-row">
+    <div class="form-row" id ="event">
             <div class="form-group col-md-2">
                     <label for="name"> Nom</label>
                     <p type="text" class="form-control" id="name" name="name" >Nom
