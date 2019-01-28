@@ -46,13 +46,13 @@ function getMedias($id) {
                 $('.eventContainer').append(
                     `<div class="mediaPanel" id="` + media.id + `">
                         <div class="mediaPhotoPanel">
-                            <img class="mediaPhoto" src="/` + media.src + `" alt="evenement media photo">
+                            <img class="mediaPhoto" src="/images/` + media.src + `" alt="evenement media photo">
                         </div>
                         <div class="mediaCredit">Patagé par ` + media.author.forename + ` ` + media.author.name +`</div>   
                         <div class="mediaLike">
                             <form method="POST" action="/aimerPhoto">
                                 ` + $token +`
-                                <button type="button" class="btn">
+                                <button type="submit" class="btn" name="media" value="` + media.id + `">
                                     <i class="fas fa-thumbs-up fa-2x"></i>
                                 </button>
                             </form>

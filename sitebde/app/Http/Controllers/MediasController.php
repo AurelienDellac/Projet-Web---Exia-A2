@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Like;
+use App\Models\Media;
 use Illuminate\Support\Facades\Auth;
 
-class LikesController extends Controller
+use Illuminate\Support\Facades\Storage;
+
+class MediasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +27,7 @@ class LikesController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -36,14 +38,20 @@ class LikesController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'image' => 'Image|max:1000|required',
+        ]);
+
+        $image = $request->file('image');
         $data = $request->all();
-        $i = Like::firstOrCreate(
-            ['id_media' => $data['media'],
-            'id_user' => Auth::user()->id]
-        );
-        if(!$i->wasRecentlyCreated){
-           $this->destroy($data['media']);
-        }
+        $image = $image->store('medias', 'images'); 
+
+        Media::create([
+            'id_event' => $data['event'],
+            'id_author' => Auth::user()->id,
+            'src' => $image
+        ]);
+        
         return redirect()->back();
     }
 
@@ -89,9 +97,6 @@ class LikesController extends Controller
      */
     public function destroy($id)
     {
-        $like = Like::where("id_user", Auth::user()->id)
-                                        ->where('id_media', $id);
-        $like->delete();
-        return \redirect()->back();
+        //
     }
 }

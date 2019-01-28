@@ -47,7 +47,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/voteIdee', 'VotesController@store')->name('storeVotes');
     
+    Route::post('/partagerPhoto', 'MediasController@store')->name('storeMedia');
     Route::post('/posterCommentaire', 'CommentsController@store')->name('storeComment');
+    Route::post('/aimerPhoto', 'LikesController@store')->name('storeLike');
     
 });
 
