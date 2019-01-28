@@ -7,6 +7,9 @@ use App\Models\Event;
 use App\Http\Controllers\RegistrationsController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ActivitiesController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EventMail;
+use App\Models\User;
 
 class EventsController extends Controller
 {
@@ -55,6 +58,8 @@ class EventsController extends Controller
             ]);
         
         
+        $user = User::findOrFail(ActivitiesController::show($data['activite'])->id_author);
+        Mail::to($user->email)->send(new EventMail(ActivitiesController::show($data['activite']->title)));
         return redirect("evenements");
     }
         
