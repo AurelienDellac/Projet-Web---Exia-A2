@@ -59,7 +59,8 @@ Route::group(['middleware' => 'member'], function () {
     Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity');
     Route::post('/creerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
     Route::get('/panier/{id}/{date}', 'OrdersController@show')->name('showUserBasket');
-
     Route::post('/supprimerEvenement/{id}', 'EventsController@destroy')->name('destroyEvent');
+    Route::post('/creerEvent', 'EventsController@store')->name('storeEvent');
+    Route::get('/creerEvent', 'EventsController@create')->name('showcreateEvent');
 });
 

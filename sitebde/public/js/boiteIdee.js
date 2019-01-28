@@ -34,8 +34,9 @@ $(function (){
 
                                                     "<div class='lib-row lib-desc pl-5 text-left '>" + idea.description + 
                                                     "</div>" +
-                                                    "</div>"+
-                                                    '<form method="POST" >' +
+                                                    "<hr> <div class='lib-row lib-desc pl-5 text-center'> <b>Nombre de votes : " + idea.votes +
+                                                    "</b></div> </div>"+
+                                                    '<form class="non" method="POST" >' +
                                                     '<input type="hidden" name="_token" value="' + $("input[name=_token]").attr("value") + '">' +
                                                     '<button type="submit" class="btn btn-dark"> Voter </button>' +
                                                     '</form>' +
