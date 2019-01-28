@@ -1,3 +1,6 @@
+var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+var months = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Decembre"];
+
 $(function (){
     var chemin = window.location.search;
     var t = chemin.split('=');
@@ -22,10 +25,8 @@ function getEvents($order) {
         url: "http://10.133.129.169:3000/events/" +$order,
         success: function(evenements) {
 
-            $.each(evenements, function(i, evenement){
+            $.each(evenements, function(evenement){
                 var date = new Date(evenement.date);
-                var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-                var months = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Decembre"];
 
                 $evenements.append(
                     "<a class='card link' id='cardContent' href='/evenement/" + evenement.id +" '>" + 
