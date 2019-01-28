@@ -3,11 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
-#myCarousel{
+.divCarousel{
     width: 70% !important;
-
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 50px;
 }
 
 .carousel-item{
@@ -16,8 +18,10 @@
 }
 
 .carousel-item img{
-    width:1100 !important;
-    height:500 !important;
+    min-width:500 !important;
+    min-height:500 !important;
+    max-width:1000 !important;
+    max-height:1000 !important;
     display: block;
     margin-left: auto;
     margin-right: auto;
