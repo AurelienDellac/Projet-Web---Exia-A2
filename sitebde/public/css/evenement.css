@@ -91,6 +91,11 @@
     font-weight: bold;
 }
 
+.labelAdmin {
+    display:flex;
+    flex-direction: row;
+}
+
 .eventPanel a {
     color:#000;
     width: 100%;

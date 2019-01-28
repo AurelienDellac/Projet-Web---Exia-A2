@@ -8,6 +8,6 @@ class Event extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'id', 'date', 'fee', 'id_activity'
+        'id', 'date', 'fee', 'id_activity', 'maskedss'
     ];
 }
