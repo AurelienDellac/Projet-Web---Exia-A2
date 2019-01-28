@@ -29,8 +29,10 @@
                         Evenements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item myLink" href="/evenementsFutur">Evenements futurs</a>
-                            <a class="dropdown-item myLink" href="/evenementsPassees">Evenements passés</a>
+
+                            <a class="dropdown-item myLink" href="/evenements/future">Evenements futurs</a>
+                            <a class="dropdown-item myLink" href="/evenements/past">Evenements passés</a>
+
                             <a class="dropdown-item myLink" href="/boiteIdee">Boite à idée</a>
                         </div>
                     </li>
@@ -73,8 +75,8 @@
             <div id="sitemap">
             <div id="event" class="colonne">
                 <h3> ÉVÈNEMENTIEL </h3>
-                    <a href="/evenements" class="nav-link myLink">Programme</a>
-                    <a href="" class="nav-link myLink">Évènements passés</a>
+                    <a href="/evenements/future" class="nav-link myLink">Programme</a>
+                    <a href="/evenements/past" class="nav-link myLink">Évènements passés</a>
                     <a href="/boiteIdee" class="nav-link myLink">Boîte a idée</a>
             </div>
 
