@@ -12,27 +12,55 @@
 
 @section('content')
 <div id="welcome">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000" data-wrap="true">
+  <div id="divEvent" class="divCarousel">
+    <div id="events" class="carousel slide" data-ride="carousel" data-interval="8000" data-wrap="true">
 
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ul>
-    
-    <!-- The slideshow -->
-    <div class="carousel-inner" >
-      <div class="iner-element" id="contenue"></div>
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#events" data-slide-to="0" class="active"></li>
+        <li data-target="#events" data-slide-to="1"></li>
+        <li data-target="#events" data-slide-to="2"></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner" >
+        <div class="iner-element" id="evenements"></div>
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#events" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#events" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+  
+  <div  id="divProduit" class="divCarousel">
+    <div id="product" class="carousel slide" data-ride="carousel" data-interval="8000" data-wrap="true">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#product" data-slide-to="0" class="active"></li>
+        <li data-target="#product" data-slide-to="1"></li>
+        <li data-target="#product" data-slide-to="2"></li>
+      </ul>
+      
+      <!-- The slideshow -->
+      <div class="carousel-inner" >
+        <div class="iner-element" id="produits"></div>
+      </div>
+      
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#product" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#product" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
     
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
   </div>
 </div>
 
