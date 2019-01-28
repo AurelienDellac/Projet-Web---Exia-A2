@@ -38,7 +38,7 @@ function getIdeas() {
                                             </div> 
                                             </div>
                                             <form class="non" method="POST" action="/voteIdee">
-                                                <input type="hidden" name="_token" value=" `+ $("input[name=_token]").attr("value") +` "> 
+                                                 <input type="hidden" name="_token" value=" `+ $("input[name=_token]").attr("value") +` "> 
                                                 <button type="submit" class="btn btn-dark" name="idee" value=`+ idea.id +`>
                                                     Voter 
                                                 </button>

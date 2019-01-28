@@ -37,11 +37,13 @@ class VotesController extends Controller
     public function store(Request $request)
     {        
         $data = $request->all();
-        dd(Vote::firstOrCreate(
+        $i = Vote::firstOrCreate(
             ['id_activity' => $data['idee'],
             'id_user' => Auth::user()->id]
-        ));
-        
+        );
+        if(!$i->wasRecentlyCreated){
+           $this->destroy($data['idee']);
+        }
         return redirect()->back();
     }
 
