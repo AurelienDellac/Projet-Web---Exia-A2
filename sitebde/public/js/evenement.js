@@ -5,12 +5,11 @@ $(function (){
     var path = window.location.pathname;
     var fragmentedPath = path.split('/');
     var id = fragmentedPath[fragmentedPath.length-1];
-    getEvents(id);
     getMedias(id);
+    getEvents(id);
     $('#pdf').click(function() {
         getRegistrations(id);
     });
-    
 });
 
 function getEvents($id) {
@@ -19,7 +18,13 @@ function getEvents($id) {
         url: "http://91.164.43.11:50000/events/" + $id,
         success: function(evenement) {
             evenement = evenement[0];
-            var date = new Date(evenement.date);            
+            var date = new Date(evenement.date);
+            
+            if (date.getTime() > new Date().getTime()) {
+                $(".share").remove();
+                $(".mediaPanel").remove();
+            }
+
             $('#eventImage').prop("src", "/images/" + evenement.img_src);
             $('#titleEvent').html("<h2>" + evenement.title + "</h2>");
             $('#dateEvent').html("<h2>" + days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()] + "</h2>");
