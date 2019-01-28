@@ -1,3 +1,15 @@
+#welcome{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myCarousel{
+    width: 70% !important;
+
+}
+
 .carousel-item{
     justify-content: center;
     align-items: center;
