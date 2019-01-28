@@ -30,13 +30,13 @@
         </form>
         
 
-    @if($user != null && $user->id_role == 2) 
+    <!-- @if($user != null && $user->id_role == 2) 
     <a href="{{route("showcreateEvent")}}" class="nav-link  oui">
             Créez votre évènement.
 
             </a>               
     @else
-    @endif
+    @endif -->
 </aside>    
     <div class="eventPanel" id="evenements"></div>
 </div>
