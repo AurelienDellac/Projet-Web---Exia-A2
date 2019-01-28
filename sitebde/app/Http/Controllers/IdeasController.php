@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ActivitiesController;
 use App\Http\Controllers\VotesController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Vote;
 
 class IdeasController extends Controller
 {
@@ -82,8 +83,11 @@ class IdeasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $data = $request->all();
+        $idea = Vote::where('id_activity', $data['idee']);
+        $idea->delete();
+        return \redirect()->back();
     }
 }
