@@ -66,12 +66,12 @@
                 </div>
             </div>
         </div>
-        <div class="mediaPanel">
+        {{-- <div class="mediaPanel">
             <div class="mediaPhotoPanel">
                 <img class="mediaPhoto" src="" alt="evenement media photo">
-                <div class="mediaLike"><button type="button" class="btn"><i class="fas fa-thumbs-up fa-2x"></i></button>50</div>
             </div>
-            <div class="mediaCredit">Credit de la photo</div>        
+            <div class="mediaCredit">Credit de la photo</div>   
+            <div class="mediaLike"><button type="button" class="btn"><i class="fas fa-thumbs-up fa-2x"></i></button><div>50</div></div>     
             <div class="mediaPost">
                 <div class="mediaComment">
                     <div class="commentHead">
@@ -82,30 +82,23 @@
                     </div>
                 </div>
                 <button type="button" class="btn"><i class="fas fa-thumbs-up fa-2x"></i></button>
-                <p>50</p>
+                50
             </div>
             <div class="mediaPost">
                     <div class="mediaComment">
                         <div class="commentHead">
-                            Jean eude
+                            Ajouter commentaire
                         </div>
                         <div class="commentContent">
-                            Commentaire de jean eude
+                           <form>
+                                <input type="text" name="content" placeholder="Commentaire" required class="form-control">
+                                <button type="submit" class="btn btn-secondary">Envoyer</button>
+                           </form>
                         </div>
                     </div>
                     <button type="button" class="btn"><i class="fas fa-thumbs-up fa-2x"></i></button>50
                 </div>
-        <div class="mediaPost">
-                <div class="mediaComment">
-                    <div class="commentHead">
-                        Jean eude
-                    </div>
-                    <div class="commentContent">
-                        Commentaire de jean eude
-                    </div>
-                </div>
-                <button type="button" class="btn"><i class="fas fa-thumbs-up fa-2x"></i></button>50
-            </div>
+            </div> --}}
     </div>
 @endsection
 

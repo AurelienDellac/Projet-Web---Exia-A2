@@ -160,13 +160,10 @@
     background-color: #fff;
     border-radius : 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width:fit-content;
     height: fit-content;
-    position: absolute;
-    /* left: 0px; */
-    bottom: 0;
     z-index: 2;
 }
 
@@ -188,7 +185,7 @@
     align-items: center;
     margin-top:10px;
     margin-bottom: 10px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .mediaComment {
@@ -215,4 +212,12 @@
     border-radius: 5px;
     padding : 5px;
     margin-left : 10px;
+}
+
+.commentContent button {
+    margin-top : 10px;
+}
+
+.commentContent form {
+    margin-bottom : 0px;
 }

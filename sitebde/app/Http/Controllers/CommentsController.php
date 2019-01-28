@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Registration;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
-class RegistrationsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,7 @@ class RegistrationsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,14 +36,12 @@ class RegistrationsController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'event' => 'Numeric|required',
-        ]);
-
         $data = $request->all();
-        Registration::firstOrCreate(
-            ["id_user" => Auth::user()->id, "id_event" => $data["event"]]
-        );
+        Comment::create([
+            'content' => $data["content"],
+            'id_author' => Auth::user()->id,
+            'id_media' => $data["media"],
+        ]);
 
         return \redirect()->back();
     }
@@ -54,10 +52,9 @@ class RegistrationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    static public function show($id_user, $id_event)
+    public function show($id)
     {
-        return Registration::where("id_user", $id_user)
-                            ->where('id_event', $id_event);
+        //
     }
 
     /**
@@ -91,9 +88,6 @@ class RegistrationsController extends Controller
      */
     public function destroy($id)
     {
-        $registration = Registration::where("id_user", Auth::user()->id)
-                                        ->where('id_event', $id);
-        $registration->delete();
-        return \redirect()->back();
+        //
     }
 }
