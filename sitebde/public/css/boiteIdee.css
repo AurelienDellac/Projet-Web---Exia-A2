@@ -58,3 +58,14 @@
 .row-margin-bottom {
   margin-bottom: 20px;
 }
+
+.oui{
+ background-color: transparent;
+text-align: center;
+color: black; 
+}
+form{
+  position: absolute;
+
+  right: 100%;
+}

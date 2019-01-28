@@ -9,7 +9,10 @@
         <h1>Boite à idée</h1>
     @endsection
 @section('content')
+        <a href="/creerIdee" class="nav-link  oui">
+            <h2>Créez votre idée maintenant !</h2>
 
+            </a>
 <section id='ideas'>
     
 </section>

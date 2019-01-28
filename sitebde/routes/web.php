@@ -17,13 +17,16 @@ Route::get('/boutique/{cat}', function ($cat) {
  });
 Route::view('/', "welcome");
 Route::view('/CGU', 'CGU');
+Route::view('/mentionsLegales', 'mentionsLegales');
+
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::get('/product/{id}', 'ProductsController@show');
 Route::get("/evenement/{id}", 'EventsController@show')->name('showEvent');
+Route::view('/boiteIdee', 'boiteIdee');
 Route::get('/evenements/{time}', function ($time) {
     return redirect('/evenements?periode=' . $time);
- });
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -38,7 +41,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/destroyOrder/{id}', 'OrdersController@destroy')->name('destroyOrder');
     Route::get('/panier', 'OrdersController@index')->name('showBasket');
     Route::post('/panier', 'OrdersController@confirm')->name('confirmOrders');
-    Route::view('/boiteIdee', 'boiteIdee');
     Route::post('/inscription', 'RegistrationsController@store')->name('storeRegistration');
     Route::post('/desinscription/{id}', 'RegistrationsController@destroy')->name('destroyRegistration');
 });
