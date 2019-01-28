@@ -85,24 +85,20 @@ main {
     background-color: #5D89DA !important;
 }
 
-.myLink:link, h3
-{
+.myLink:link, h3{
     color: rgb(220, 220, 220)  !important;
     text-decoration: none  !important;
 }
-.myLink:visited
-{
+.myLink:visited{
     color: rgb(220, 220, 220);
     text-decoration: none;
 }
-.myLink:hover, .myLink:hover > i 
-{
+.myLink:hover, .myLink:hover > i {
     color: #5D89DA !important;
     text-decoration: none;
 }
 
-.myLink:active
-{
+.myLink:active{
     color: rgb(220, 220, 220);
     text-decoration: none;
 }
