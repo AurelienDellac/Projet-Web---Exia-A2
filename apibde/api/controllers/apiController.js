@@ -71,16 +71,17 @@ exports.list_all_registered = function(req, res) {
     } else {   
       var doc = new PDFDocument;
       doc.pipe(res);
-      let date = "" + data[0].date;
-      doc.fontSize(25).text("Inscrits " + data[0].title + " - " + date.slice(4,15), { align : "center"});
+      if (data !== undefined && data.length != 0) {
+        let date = "" + data[0].date;
+        doc.fontSize(25).text("Inscrits " + data[0].title + " - " + date.slice(4,15), { align : "center"});
 
-      let i = 0;
-      for(let obj of data) {
-        let tmp = "- " + obj.name + " " + obj.forename;
-        doc.fontSize(15).text(tmp, 50, 150 + 15*i);
-        i++
+        let i = 0;
+        for(let obj of data) {
+          let tmp = "- " + obj.name + " " + obj.forename;
+          doc.fontSize(15).text(tmp, 50, 150 + 15*i);
+          i++
+        }
       }
-
       doc.end();
     }
   });

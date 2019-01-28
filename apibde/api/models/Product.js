@@ -102,7 +102,7 @@ Product.getOrder = function getOrder(id, date, result) {
 };
 
 Product.getSales = function getSales(result) {
-    sql.query(`SELECT products.id AS id, label, img_src, price, COUNT(products.id) as sales
+    sql.query(`SELECT products.id AS id, label, img_src, price, SUM(quantity) as sales
                FROM orders
                INNER JOIN products ON products.id=orders.id_product
                GROUP BY products.id

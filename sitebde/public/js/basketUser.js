@@ -14,7 +14,7 @@ function getBasket($id, $date) {
     $title.empty();
     $.ajax({
         type:'GET',
-        url: "http://10.133.129.169:3000/basket/" + $id + "/" + $date,
+        url: "http://91.164.43.11:50000/basket/" + $id + "/" + $date,
 
         success: function(orders) {
             $total = 0;

@@ -41,10 +41,8 @@ class RegistrationsController extends Controller
         ]);
 
         $data = $request->all();
-
         Registration::firstOrCreate(
-            ["id_user" => Auth::user()->id],
-            ["id_event" => $data["event"]]
+            ["id_user" => Auth::user()->id, "id_event" => $data["event"]]
         );
 
         return \redirect()->back();

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Vote;
 
-class VotesController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,7 @@ class VotesController extends Controller
      */
     public function create()
     {
-    
+        
     }
 
     /**
@@ -35,24 +35,15 @@ class VotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
-        $data = $request->all();
-        Vote::firstOrCreate(
-            ['id_activity' => $data['idee'],
-            'id_user' => Auth::user()->id]
-        );
-        
-        return redirect()->back();
-    }
-
-    static public function initialStore($id_activity)
     {
-        Vote::create([
-            'id_activity' => $id_activity,
-            'id_user' => Auth::user()->id,
+        $data = $request->all();
+        Comment::create([
+            'content' => $data["content"],
+            'id_author' => Auth::user()->id,
+            'id_media' => $data["media"],
         ]);
-        
-        return redirect("boiteIdee");
+
+        return \redirect()->back();
     }
 
     /**
@@ -61,10 +52,9 @@ class VotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_user, $id_activity)
+    public function show($id)
     {
-        return Vote::where("id_user", $id_user)
-                            ->where('id_activity', $id_activity);
+        //
     }
 
     /**
@@ -98,9 +88,6 @@ class VotesController extends Controller
      */
     public function destroy($id)
     {
-        $vote = Vote::where("id_user", Auth::user()->id)
-                                        ->where('id_activity', $id);
-        $vote->delete();
-        return \redirect()->back();
+        //
     }
 }

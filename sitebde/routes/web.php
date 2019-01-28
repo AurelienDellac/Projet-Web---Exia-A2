@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/inscription', 'RegistrationsController@store')->name('storeRegistration');
     Route::post('/desinscription/{id}', 'RegistrationsController@destroy')->name('destroyRegistration');
     Route::post('/voteIdee', 'VotesController@store')->name('storeVotes');
-
+    Route::post('/posterCommentaire', 'CommentsController@store')->name('storeComment');
 });
 
 Route::group(['middleware' => 'salarie'], function () {
