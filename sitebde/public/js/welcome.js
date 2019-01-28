@@ -11,6 +11,7 @@ $(function (){
         success: function(evenements) {
             var i;
             var max = 3;
+            var div;
             if(evenements.length < 3){
                 max = evenements.length;
             }
@@ -20,27 +21,20 @@ $(function (){
                     var date = new Date(evenements[i].date);
 
                     if(i ==0){
-                        $contenue.append(
-                            "<div class='carousel-item active'>"+
-                                "<img src='/images/" + evenements[i].img_src +"' alt='le texte' id='monImage'>"+
-                                "<div class='carousel-caption'>"+
-                                    "<h3>" + evenements[i].title + "</h3>"+
-                                    "<p>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
-                                "</div>"+
-                            "</div>"
-                        );
+                        div = "<div class='carousel-item active'>" ;
                     }
                     else{
-                        $contenue.append(
-                            "<div class='carousel-item'>"+
-                                "<img src='/images/" + evenements[i].img_src +"' alt='le texte' id='monImage'>"+
-                                "<div class='carousel-caption'>"+
-                                    "<h3>" + evenements[i].title + "</h3>"+
-                                    "<p>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
-                                "</div>"+
-                            "</div>"
-                        );
+                        div = "<div class='carousel-item'>"  
                     }
+                    $contenue.append(
+                        div +
+                        "<img src='/images/" + evenements[i].img_src +"' alt='le texte' id='monImage'>"+
+                        "<div class='carousel-caption'>"+
+                            "<h3>" + evenements[i].title + "</h3>"+
+                            "<p>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
+                        "</div>"+
+                    "</div>"
+                    );
             }
         }
     });
