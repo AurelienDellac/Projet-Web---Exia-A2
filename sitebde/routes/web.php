@@ -20,6 +20,7 @@ Route::view('/CGU', 'CGU');
 Route::view('/evenements', 'evenements');
 Route::view('/mentionslegales', 'mentionslegales');
 Route::get('/product/{id}', 'ProductsController@show');
+Route::get("/evenement/{id}", 'EventsController@show')->name('showEvent');
 
 
 Auth::routes();
@@ -36,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/panier', 'OrdersController@index')->name('showBasket');
     Route::post('/panier', 'OrdersController@confirm')->name('confirmOrders');
     Route::view('/boiteIdee', 'boiteIdee');
+    Route::post('/inscription', 'RegistrationsController@store')->name('storeRegistration');
+    Route::post('/desinscription/{id}', 'RegistrationsController@destroy')->name('destroyRegistration');
 });
 
 Route::group(['middleware' => 'member'], function () {
