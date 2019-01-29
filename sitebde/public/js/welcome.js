@@ -13,7 +13,7 @@ $(function (){
 function generateCarouselEvent($evenements){
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/",
+        url: "http://10.133.129.169:3000/events/",
         success: function(evenements) {
             var i;
             var max = 3;
@@ -48,7 +48,7 @@ function generateCarouselEvent($evenements){
 function generateCarouselProduits($produits){
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/products/sales",
+        url: "http://10.133.129.169:3000/products/sales",
         success: function(produits) {
             var i;
             var max = 3;

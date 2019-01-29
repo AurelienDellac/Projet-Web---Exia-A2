@@ -42,24 +42,23 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'fee' => 'String|required|max:50',
+            'fee' => 'String|max:50|nullable',
             'date' => 'Date|required|max:500',
         ]);
 
         $image = $request->file('image');
         $data = $request->all();
-
-        
        
-            Event::create([
-                'fee' => $data['fee'],
-                'date' => $data['date'],
-                'id_activity' => $data['activite'],
-            ]);
+        Event::create([
+            'fee' => $data['fee'],
+            'date' => $data['date'],
+            'id_activity' => $data['activite'],
+        ]);
         
         
         $user = User::findOrFail(ActivitiesController::show($data['activite'])->id_author);
-        Mail::to($user->email)->send(new EventMail(ActivitiesController::show($data['activite']->title)));
+        $activity = ActivitiesController::show($data['activite'])->title;
+        Mail::to($user->email)->send(new EventMail($activity));
         return redirect("evenements");
     }
         
