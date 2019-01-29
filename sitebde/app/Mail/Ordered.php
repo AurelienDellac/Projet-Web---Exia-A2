@@ -33,6 +33,6 @@ class Ordered extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.ordered');
+        return $this->markdown('emails.ordered')->subject("Commande BDE CESI")->from("aurelien.dellac@gmail.com", "BDE CESI BOUTIQUE");;
     }
 }

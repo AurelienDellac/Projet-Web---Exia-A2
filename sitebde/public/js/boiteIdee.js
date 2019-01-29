@@ -7,7 +7,7 @@ function getIdeas() {
     $ideas.empty();
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/ideas/",
+        url: "http://10.133.129.169:3000/ideas/",
 
         success: function(ideas) {
             $.each(ideas, function(i, idea){
@@ -15,7 +15,7 @@ function getIdeas() {
                     `<div class="container pt-5">
                         <div class="row">
                             <div class='col-md-12 text-center'>
-                                <div class='col-md-6 no-padding lib-item' data-category='view'>
+                                <div class='col-md-12 no-padding lib-item' data-category='view'>
                                     <div class='lib-panel'> <div class='row box-shadow w-100'>
                                         <div class='col-md-6 image-row'> <img src='Images/` +idea.img_src + ` ' alt='Card image cap'>
                                         </div>
