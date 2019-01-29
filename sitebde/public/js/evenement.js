@@ -15,7 +15,7 @@ $(function (){
 function getEvents($id) {
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/" + $id,
+        url: "http://10.133.129.169:3000/events/" + $id,
         success: function(evenement) {
             evenement = evenement[0];
             var date = new Date(evenement.date);
@@ -44,7 +44,7 @@ function getMedias($id) {
     $('.mediaPanel').remove();
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/" + $id + "/medias",
+        url: "http://10.133.129.169:3000/events/" + $id + "/medias",
         success: function(medias) {
             $.each(medias, function(i, media){
                 $('.eventContainer').append(
@@ -101,5 +101,5 @@ function getMedias($id) {
 }
 
 function getRegistrations($id) {
-    window.open("http://91.164.43.11:50000/events/" + $id + "/registrations");
+    window.open("http://10.133.129.169:3000/events/" + $id + "/registrations");
 }
