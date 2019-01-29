@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Vote;
+use App\Http\Controllers\ActivitiesController;
 
 class VotesController extends Controller
 {
@@ -42,7 +43,10 @@ class VotesController extends Controller
             'id_user' => Auth::user()->id]
         );
         if(!$i->wasRecentlyCreated){
-           $this->destroy($data['idee']);
+           $activity_author = ActivitiesController::show($data['idee'])->id_author;
+           if (Auth::user()->id != $activity_author) {
+               $this->destroy($data['idee']);
+           }
         }
         return redirect()->back();
     }

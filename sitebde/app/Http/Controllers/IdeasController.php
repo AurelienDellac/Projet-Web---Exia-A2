@@ -51,7 +51,7 @@ class IdeasController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
