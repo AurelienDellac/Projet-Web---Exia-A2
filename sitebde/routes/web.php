@@ -44,8 +44,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/panier', 'OrdersController@confirm')->name('confirmOrders');
     Route::post('/inscription', 'RegistrationsController@store')->name('storeRegistration');
     Route::post('/desinscription/{id}', 'RegistrationsController@destroy')->name('destroyRegistration');
+
     Route::post('/voteIdee', 'VotesController@store')->name('storeVotes');
+    
+    Route::post('/partagerPhoto', 'MediasController@store')->name('storeMedia');
     Route::post('/posterCommentaire', 'CommentsController@store')->name('storeComment');
+    Route::post('/aimerPhoto', 'LikesController@store')->name('storeLike');
+    
 });
 
 Route::group(['middleware' => 'salarie'], function () {
@@ -60,9 +65,14 @@ Route::group(['middleware' => 'member'], function () {
     Route::get('/creerActivite', 'ActivitiesController@create')->name('createActivity');
     Route::post('/creerActivite', 'ActivitiesController@store')->name('storeActivity'); 
     Route::post('/supprimerActivite', 'ActivitiesController@destroy')->name('destroyActivity');
+
     Route::get('/panier/{id}/{date}', 'OrdersController@show')->name('showUserBasket');
+
     Route::post('/supprimerEvenement/{id}', 'EventsController@destroy')->name('destroyEvent');
     Route::post('/creerEvent', 'EventsController@store')->name('storeEvent');
     Route::get('/creerEvent', 'EventsController@create')->name('showcreateEvent');
+
+    Route::view('/detruireIdee', "detruireIdee");
+    Route::post('/detruireIdee', 'ideasController@destroy')->name('destroyIdea');
 });
 

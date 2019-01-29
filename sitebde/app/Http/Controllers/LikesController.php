@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\ActivitiesController;
-use App\Http\Controllers\VotesController;
+use App\Models\Like;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Vote;
 
-class IdeasController extends Controller
+class LikesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class IdeasController extends Controller
      */
     public function index()
     {
-        Activity::all();
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class IdeasController extends Controller
      */
     public function create()
     {
-        return view("creerIdee");
+        
     }
 
     /**
@@ -38,9 +36,15 @@ class IdeasController extends Controller
      */
     public function store(Request $request)
     {
-        ActivitiesController::store($request);
-        VotesController::initialStore(ActivitiesController::showLastUserIdea(Auth::user()->id)->id);
-        return redirect("boiteIdee");
+        $data = $request->all();
+        $i = Like::firstOrCreate(
+            ['id_media' => $data['media'],
+            'id_user' => Auth::user()->id]
+        );
+        if(!$i->wasRecentlyCreated){
+           $this->destroy($data['media']);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -83,11 +87,11 @@ class IdeasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $data = $request->all();
-        $idea = Vote::where('id_activity', $data['idee']);
-        $idea->delete();
+        $like = Like::where("id_user", Auth::user()->id)
+                                        ->where('id_media', $id);
+        $like->delete();
         return \redirect()->back();
     }
 }
