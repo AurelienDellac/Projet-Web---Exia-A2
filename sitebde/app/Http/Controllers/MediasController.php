@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\ActivitiesController;
-use App\Http\Controllers\VotesController;
+use App\Models\Media;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Vote;
 
-class IdeasController extends Controller
+use Illuminate\Support\Facades\Storage;
+
+class MediasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class IdeasController extends Controller
      */
     public function index()
     {
-        Activity::all();
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class IdeasController extends Controller
      */
     public function create()
     {
-        return view("creerIdee");
+        //
     }
 
     /**
@@ -38,9 +38,21 @@ class IdeasController extends Controller
      */
     public function store(Request $request)
     {
-        ActivitiesController::store($request);
-        VotesController::initialStore(ActivitiesController::showLastUserIdea(Auth::user()->id)->id);
-        return redirect("boiteIdee");
+        $validatedData = $request->validate([
+            'image' => 'Image|max:1000|required',
+        ]);
+
+        $image = $request->file('image');
+        $data = $request->all();
+        $image = $image->store('medias', 'images'); 
+
+        Media::create([
+            'id_event' => $data['event'],
+            'id_author' => Auth::user()->id,
+            'src' => $image
+        ]);
+        
+        return redirect()->back();
     }
 
     /**
@@ -83,11 +95,8 @@ class IdeasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $data = $request->all();
-        $idea = Vote::where('id_activity', $data['idee']);
-        $idea->delete();
-        return \redirect()->back();
+        //
     }
 }
