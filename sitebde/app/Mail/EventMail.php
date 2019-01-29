@@ -29,6 +29,8 @@ class EventMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.event');
+        return $this->markdown('emails.event')
+                    ->subject("Evènement " . $this->activity)
+                    ->from("aurelien.dellac@gmail.com", "BDE CESI EVENEMENT");
     }
 }

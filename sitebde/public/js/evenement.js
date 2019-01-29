@@ -15,7 +15,7 @@ $(function (){
 function getEvents($id) {
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/" + $id,
+        url: "http://10.133.129.169:3000/events/" + $id,
         success: function(evenement) {
             evenement = evenement[0];
             var date = new Date(evenement.date);
@@ -23,6 +23,8 @@ function getEvents($id) {
             if (date.getTime() > new Date().getTime()) {
                 $(".share").remove();
                 $(".mediaPanel").remove();
+            } else {
+                $("#subscribe").remove();
             }
 
             $('#eventImage').prop("src", "/images/" + evenement.img_src);
@@ -30,7 +32,7 @@ function getEvents($id) {
             $('#dateEvent').html("<h2>" + days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()] + "</h2>");
             $('#descriptionEvent').html(evenement.description);
             $('#contactEvent').html("Responsable : <a href='mailto:communication@bdecesibordeaux.fr'>" + evenement.author.mail + "</a>");
-            if (evenement.fee == null) {
+            if (evenement.fee == null || evenement.fee == 0) {
                 $('#priceEvent').html("GRATUIT");
             } else {
                 $('#priceEvent').html(evenement.fee + "€");
@@ -44,7 +46,7 @@ function getMedias($id) {
     $('.mediaPanel').remove();
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/" + $id + "/medias",
+        url: "http://10.133.129.169:3000/events/" + $id + "/medias",
         success: function(medias) {
             $.each(medias, function(i, media){
                 $('.eventContainer').append(
@@ -101,5 +103,5 @@ function getMedias($id) {
 }
 
 function getRegistrations($id) {
-    window.open("http://91.164.43.11:50000/events/" + $id + "/registrations");
+    window.open("http://10.133.129.169:3000/events/" + $id + "/registrations");
 }

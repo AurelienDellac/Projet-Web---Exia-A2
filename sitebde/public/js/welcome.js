@@ -13,7 +13,7 @@ $(function (){
 function generateCarouselEvent($evenements){
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/",
+        url: "http://10.133.129.169:3000/events/",
         success: function(evenements) {
             var i;
             var max = 3;
@@ -25,11 +25,12 @@ function generateCarouselEvent($evenements){
             for(i =0; i < max; i++){
                 var date = new Date(evenements[i].date);
                 if(i ==0){
-                    div = "<div class='carousel-item active'>" ;
+                    div = "<a class='carousel-item active' " ;
                 }
                 else{
-                    div = "<div class='carousel-item'>"  
+                    div = "<a class='carousel-item' ";
                 }
+                div = div + "href=' /evenement/"+ evenements[i].id +"'>";
                 $evenements.append(
                     div +
                     "<img src='/images/" + evenements[i].img_src +"' alt='le texte' id='monImage'>"+
@@ -37,7 +38,7 @@ function generateCarouselEvent($evenements){
                         "<h3>" + evenements[i].title + "</h3>"+
                         "<p>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</p>"+
                     "</div>"+
-                "</div>"
+                "</a>"
                 );
             }
         }
@@ -47,7 +48,7 @@ function generateCarouselEvent($evenements){
 function generateCarouselProduits($produits){
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/products/sales",
+        url: "http://10.133.129.169:3000/products/sales",
         success: function(produits) {
             var i;
             var max = 3;
@@ -58,19 +59,21 @@ function generateCarouselProduits($produits){
 
             for(i =0; i < max; i++){
                 if(i ==0){
-                    div = "<div class='carousel-item active'>" ;
+                    div = "<a class='carousel-item active' " ;
                 }
                 else{
-                    div = "<div class='carousel-item'>"  
+                    div = "<a class='carousel-item' "  ;
                 }
+                div = div + "href=' /product/"+ produits[i].id +"'>";
                 $produits.append(
+
                     div +
                     "<img src='/images/" + produits[i].img_src +"' alt='image of " + produits[i].label + "' id='monImage'>"+
                     "<div class='carousel-caption'>"+
                         "<h3>" + produits[i].label + "</h3>"+
                         "<p>" + produits[i].price + " €" + "</p>"+
                     "</div>"+
-                "</div>"
+                "</a>"
                 );
             }
         }

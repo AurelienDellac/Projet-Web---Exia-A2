@@ -71,5 +71,8 @@ Route::group(['middleware' => 'member'], function () {
     Route::post('/supprimerEvenement/{id}', 'EventsController@destroy')->name('destroyEvent');
     Route::post('/creerEvent', 'EventsController@store')->name('storeEvent');
     Route::get('/creerEvent', 'EventsController@create')->name('showcreateEvent');
+
+    Route::view('/detruireIdee', "detruireIdee");
+    Route::post('/detruireIdee', 'ideasController@destroy')->name('destroyIdea');
 });
 

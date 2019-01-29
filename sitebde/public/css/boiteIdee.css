@@ -14,7 +14,7 @@
 
 .lib-panel {
   margin-bottom: 20Px;
-  width: 1000px;
+  width: 100%;
 }
 .lib-panel img {
   width: 100%;
@@ -64,6 +64,7 @@ color: black;
 }
 .non{
   position: absolute;
-
-  right: 100%;
+  left: 10px;
+  top : 10px;
+  margin-left : 20px;
 }

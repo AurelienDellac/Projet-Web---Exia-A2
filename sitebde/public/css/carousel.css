@@ -18,7 +18,7 @@
 }
 .carousel-inner img {
   width: 30%;
-  height: 20%;
+  height: auto;
 }
 .carousel-control-prev {
     color: blue;
@@ -37,8 +37,8 @@
 }
 .fa-twitter:hover{
     color: teal;
-}
-font-family : Georgia,serif;
+} 
+
 .Jour{
     background: white;
 }

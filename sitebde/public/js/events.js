@@ -22,7 +22,7 @@ function getEvents($order) {
     $evenements.empty();
     $.ajax({
         type:'GET',
-        url: "http://91.164.43.11:50000/events/" +$order,
+        url: "http://10.133.129.169:3000/events/" +$order,
         success: function(evenements) {
 
             $.each(evenements, function(i, evenement){
@@ -35,6 +35,8 @@ function getEvents($order) {
                             "<div class='card-body column center'>"+  
                                 "<h5 class='card-title'>" + evenement.title + "</h5>"+
                                 "<p class='card-description'>" + evenement.description + "</p>"+
+                            "</div>"+
+                            "<div class='lib-header-seperator'>"+
                             "</div>"+
                             "<div class='card-body column right'>"+
                                 "<h5 class='card-text'>" + days[date.getDay()] +" "+ date.getDate() +" " + months[date.getMonth()]  + "</h5>"+

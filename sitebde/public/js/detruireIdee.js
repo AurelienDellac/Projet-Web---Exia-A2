@@ -1,7 +1,7 @@
 $(function (){
     getIdeas();
 });
-    
+
 function getIdeas() {
     var $ideas = $('#ideas');
     $ideas.empty();
@@ -15,7 +15,7 @@ function getIdeas() {
                     `<div class="container pt-5">
                         <div class="row">
                             <div class='col-md-12 text-center'>
-                                <div class='col-md-12 no-padding lib-item' data-category='view'>
+                                <div class='col-md-6 no-padding lib-item' data-category='view'>
                                     <div class='lib-panel'> <div class='row box-shadow w-100'>
                                         <div class='col-md-6 image-row'> <img src='Images/` +idea.img_src + ` ' alt='Card image cap'>
                                         </div>
@@ -37,10 +37,10 @@ function getIdeas() {
                                                 <b>Nombre de votes : `+ idea.votes +` </b>
                                             </div> 
                                             </div>
-                                            <form class="non" method="POST" action="/voteIdee">
-                                                <input type="hidden" name="_token" value=" `+ $("input[name=_token]").attr("value") +` "> 
-                                                <button type="submit" class="btn btn-dark" name="idee" value=`+ idea.id +`>
-                                                    Voter 
+                                            <form class="non" method="POST" action="/detruireIdee" onsubmit="return confirm('detruire : ` + idea.title + `');">
+                                                 <input type="hidden" name="_token" value=" `+ $("input[name=_token]").attr("value") +` "> 
+                                                <button type="submit" class="btn btn-danger" name="idee" value=`+ idea.id +`>
+                                                    DETRUIRE 
                                                 </button>
                                             </form>
 
